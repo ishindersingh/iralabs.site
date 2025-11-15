@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The CS Pack - IRA Labs Course</title>
+    <meta name="description" content="IRA Labs - Learn AI, IoT, Robotics & Next-Gen Tech. The CS Pack: 4-week beginner course with 80% OFF (₹2,999). 500+ students enrolled. Industry certifications & placement support.">
+    <meta name="keywords" content="AI course, IoT training, robotics learning, tech bootcamp, beginner programming, C++, Python, IRA Labs, online course">
+    <meta name="author" content="IRA Labs - Ishinders Research Lab and Automation">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="IRA Labs - From Idea to Innovation | AI, IoT & Robotics Training">
+    <meta property="og:description" content="Master AI, IoT, Robotics in 4 weeks. The CS Pack course - 80% OFF. Lifetime access, 500+ projects, industry certifications.">
+    <meta property="og:image" content="heropic.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iralabs.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IRA Labs - AI, IoT & Robotics Training">
+    <meta name="twitter:description" content="Learn from zero to job-ready in 4 weeks. ₹2,999 (80% OFF). Lifetime access. Industry certifications.">
+    <title>IRA Labs - AI, IoT & Robotics Training Course | Learn from Beginners to Advanced</title>
+    <link rel="canonical" href="https://iralabs.com">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -315,8 +334,13 @@
         .pricing-header h3 {
             font-size: 1.8rem;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
+        }
+
+        .pricing-header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
         }
 
         .discount-badge {
@@ -327,11 +351,17 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         .price-section {
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .original-price {
@@ -365,11 +395,6 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
         .timer {
             background: #FFF3CD;
             color: #856404;
@@ -398,6 +423,10 @@
         .booking-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0, 118, 255, 0.3);
+        }
+
+        .booking-btn:active {
+            transform: translateY(-1px);
         }
 
         .back-btn {
@@ -525,6 +554,13 @@
             font-weight: 500;
         }
 
+        .module-project {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
         .faq-container {
             display: flex;
             flex-direction: column;
@@ -632,6 +668,33 @@
             color: var(--text-light);
         }
 
+        .inline-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .inline-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 118, 255, 0.3);
+        }
+
+        .inline-cta-block {
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding: 1rem;
+        }
+
         .cta-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -664,11 +727,52 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
 
         .cta-btn-white:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            animation: slideInUp 0.5s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .floating-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 118, 255, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(0, 118, 255, 0.6);
         }
 
         footer {
@@ -769,6 +873,15 @@
             footer {
                 padding: 2rem 4%;
             }
+            .floating-cta {
+                bottom: 80px;
+                right: 10px;
+            }
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -800,6 +913,13 @@
             .cta-section h2 {
                 font-size: 1.8rem;
             }
+            .booking-btn {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -821,9 +941,9 @@
         <div class="course-hero-content">
             <h1>The <span>CS Pack</span></h1>
             <div class="course-hero-meta">
-                <div class="meta-item">⏱️ <strong>Duration:</strong> Self-paced, 12 Weeks Recommended</div>
-                <div class="meta-item">👥 <strong>Students:</strong> 500+ Already Enrolled</div>
-                <div class="meta-item">📜 <strong>Certificate:</strong> Industry-Recognized</div>
+                <div class="meta-item">⏱️ <strong>Duration:</strong> 4 Weeks (Beginner → Intermediate)</div>
+                <div class="meta-item">👥 <strong>Students:</strong> 30+ Already Enrolled</div>
+                <div class="meta-item">📜 <strong>Certificate:</strong> Industry-Recognized + Project Verified</div>
             </div>
         </div>
     </section>
@@ -835,8 +955,10 @@
                 <section>
                     <h2 class="section-title">📖 Course Overview</h2>
                     <div class="section-content">
-                        <p>The CS Pack is a comprehensive, beginner-to-intermediate program designed to transform you from no experience to job-ready in cutting-edge technologies. Whether you're a college student looking to stand out or a professional pivoting to tech, this course bridges the gap between theory and real-world application.</p>
-                        <p>You'll learn C++, Python, AI, IoT, Electronics, and Data Structures through 50+ hands-on projects, live mentoring, and a supportive community of 500+ learners. Best of all? Complete it at your own pace with lifetime access.</p>
+                        <p>The CS Pack is a 4-week practical training program designed for students who want to learn real tech skills from scratch — even if you have zero coding or electronics experience.</p>
+                        <p>In just 4 weeks, you'll learn the core essential skills every modern engineer needs: C++ basics, Python basics, AI tools, IoT fundamentals, digital electronics & sensors, and one complete final project.</p>
+                        <p>This course is short, focused, and beginner-friendly — specially made for college students who want real practical knowledge, not boring theory. You'll learn through hands-on tasks, beginner-focused lessons, and small weekly projects you can add to your portfolio.</p>
+                        <button class="inline-cta inline-cta-block" onclick="bookNow()">🚀 Enroll Now - Limited Spots!</button>
                     </div>
                 </section>
 
@@ -846,49 +968,52 @@
                     <div class="features-list">
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>Programming Mastery:</strong> C++ & Python from fundamentals to advanced</p>
+                            <p><strong>C++ Basics:</strong> Syntax, loops, functions, arrays, mini console programs</p>
                         </div>
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>AI & ML:</strong> TensorFlow, PyTorch, and practical machine learning</p>
+                            <p><strong>Python Basics:</strong> Variables, data types, libraries, automation basics</p>
                         </div>
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>IoT & Hardware:</strong> Arduino, Raspberry Pi, embedded systems</p>
+                            <p><strong>AI Tools for Beginners:</strong> ChatGPT, LLaMA, basic ML concepts, AI workflow</p>
                         </div>
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>Data Structures:</strong> Algorithms, optimization, problem-solving</p>
+                            <p><strong>IoT Essentials:</strong> Arduino, ESP32, sensors, reading data, mini-projects</p>
                         </div>
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>Real Projects:</strong> 50+ hands-on projects for your portfolio</p>
+                            <p><strong>Electronics Fundamentals:</strong> Breadboard, resistors, LEDs, sensors, circuits</p>
                         </div>
                         <div class="feature-item">
                             <strong>✓</strong>
-                            <p><strong>Mentorship:</strong> Live sessions with industry experts</p>
+                            <p><strong>4 Hands-on Weekly Projects:</strong> One project per week + certificate capstone project</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Curriculum -->
                 <section>
-                    <h2 class="section-title">🎯 Detailed Curriculum</h2>
+                    <h2 class="section-title">🎯 Detailed 4-Week Curriculum</h2>
                     <div class="modules-grid">
                         <div class="module-card">
                             <div class="module-header">
-                                <div class="module-icon">💻</div>
+                                <div class="module-icon">📘</div>
                                 <div class="module-info">
-                                    <h4>Module 1: C++ Fundamentals</h4>
-                                    <div class="module-duration">⏱️ 3 Weeks</div>
+                                    <h4>Week 1: C++ + Basic Programming</h4>
+                                    <div class="module-duration">⏱️ 4–5 Hours</div>
                                 </div>
                             </div>
-                            <p class="module-description">Master object-oriented programming with C++. Learn syntax, data types, control structures, functions, classes, and inheritance. Build your first console applications.</p>
+                            <p class="module-description">Get started with programming fundamentals using C++. Learn syntax, variables, loops, functions, and basic problem-solving. Build your first mini-project.</p>
                             <div class="module-topics">
-                                <span class="topic-tag">Variables & Types</span>
-                                <span class="topic-tag">OOP Concepts</span>
-                                <span class="topic-tag">STL Libraries</span>
-                                <span class="topic-tag">File Handling</span>
+                                <span class="topic-tag">C++ Syntax</span>
+                                <span class="topic-tag">Variables & Loops</span>
+                                <span class="topic-tag">Functions</span>
+                                <span class="topic-tag">Problem-Solving</span>
+                            </div>
+                            <div class="module-project">
+                                📝 Mini Project: Digital Calculator / LED Pattern Logic Simulator
                             </div>
                         </div>
 
@@ -896,16 +1021,19 @@
                             <div class="module-header">
                                 <div class="module-icon">🐍</div>
                                 <div class="module-info">
-                                    <h4>Module 2: Python Mastery</h4>
-                                    <div class="module-duration">⏱️ 3 Weeks</div>
+                                    <h4>Week 2: Python + Automation</h4>
+                                    <div class="module-duration">⏱️ 4–5 Hours</div>
                                 </div>
                             </div>
-                            <p class="module-description">Learn Python for data science and automation. Cover Python basics, pandas, numpy, data visualization, and web scraping. Perfect for rapid application development.</p>
+                            <p class="module-description">Master Python fundamentals for automation. Learn file handling, using libraries like pandas, and create your first automation scripts.</p>
                             <div class="module-topics">
-                                <span class="topic-tag">Python Basics</span>
-                                <span class="topic-tag">Pandas & Numpy</span>
-                                <span class="topic-tag">Data Visualization</span>
-                                <span class="topic-tag">Web Scraping</span>
+                                <span class="topic-tag">Python Fundamentals</span>
+                                <span class="topic-tag">File Handling</span>
+                                <span class="topic-tag">Libraries & Pandas</span>
+                                <span class="topic-tag">Automation Basics</span>
+                            </div>
+                            <div class="module-project">
+                                📝 Mini Project: Auto File Organizer or Data Analyzer Tool
                             </div>
                         </div>
 
@@ -913,33 +1041,19 @@
                             <div class="module-header">
                                 <div class="module-icon">🤖</div>
                                 <div class="module-info">
-                                    <h4>Module 3: AI Tools & Machine Learning</h4>
-                                    <div class="module-duration">⏱️ 4 Weeks</div>
+                                    <h4>Week 3: AI Tools + IoT Basics</h4>
+                                    <div class="module-duration">⏱️ 5–6 Hours</div>
                                 </div>
                             </div>
-                            <p class="module-description">Deep dive into machine learning and deep learning. Learn TensorFlow, PyTorch, scikit-learn, and build neural networks. Deploy real AI models.</p>
+                            <p class="module-description">Discover AI tools for productivity and learn IoT fundamentals. Work with Arduino/ESP32, read sensor data, and build your first IoT project.</p>
                             <div class="module-topics">
-                                <span class="topic-tag">TensorFlow</span>
-                                <span class="topic-tag">PyTorch</span>
-                                <span class="topic-tag">Neural Networks</span>
-                                <span class="topic-tag">Model Deployment</span>
+                                <span class="topic-tag">AI Tools & ChatGPT</span>
+                                <span class="topic-tag">ML Workflow</span>
+                                <span class="topic-tag">Arduino/ESP32</span>
+                                <span class="topic-tag">Sensor Data Reading</span>
                             </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">📡</div>
-                                <div class="module-info">
-                                    <h4>Module 4: IoT Platforms & Cloud</h4>
-                                    <div class="module-duration">⏱️ 3 Weeks</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Build connected IoT systems. Learn Arduino, Raspberry Pi, MQTT, cloud platforms (AWS, Google Cloud), and real-time data processing.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">Arduino</span>
-                                <span class="topic-tag">Raspberry Pi</span>
-                                <span class="topic-tag">Cloud IoT</span>
-                                <span class="topic-tag">MQTT Protocol</span>
+                            <div class="module-project">
+                                📝 Mini Project: Smart Sensor Dashboard (Basic IoT Project)
                             </div>
                         </div>
 
@@ -947,51 +1061,22 @@
                             <div class="module-header">
                                 <div class="module-icon">⚡</div>
                                 <div class="module-info">
-                                    <h4>Module 5: Electronics & Hardware</h4>
-                                    <div class="module-duration">⏱️ 2 Weeks</div>
+                                    <h4>Week 4: Electronics + Capstone Project</h4>
+                                    <div class="module-duration">⏱️ 6–7 Hours</div>
                                 </div>
                             </div>
-                            <p class="module-description">Understand electronics fundamentals. Learn circuit design, microcontrollers, sensors, actuators, and embedded systems programming.</p>
+                            <p class="module-description">Learn electronics fundamentals and integrate everything into a capstone project. Build an AI-powered IoT solution from scratch.</p>
                             <div class="module-topics">
-                                <span class="topic-tag">Circuit Design</span>
-                                <span class="topic-tag">Microcontrollers</span>
+                                <span class="topic-tag">Electronics Basics</span>
                                 <span class="topic-tag">Sensors & Actuators</span>
-                                <span class="topic-tag">Embedded Systems</span>
+                                <span class="topic-tag">Integration</span>
+                                <span class="topic-tag">Capstone Project</span>
                             </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">🏗️</div>
-                                <div class="module-info">
-                                    <h4>Module 6: Data Structures & Algorithms</h4>
-                                    <div class="module-duration">⏱️ 2 Weeks</div>
-                                </div>
+                            <div class="module-project">
+                                🚀 Final Capstone Projects: Smart Home Automation • Weather Station • Smart Door Alert • Motion Detection + Telegram Alert • AI Notes Generator + IoT Data Logger<br><br>
+                                ✅ Includes: Portfolio Guidance + Certificate + Feedback
                             </div>
-                            <p class="module-description">Master algorithms and optimization. Learn arrays, linked lists, trees, graphs, sorting, searching, and dynamic programming for efficient problem-solving.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">Data Structures</span>
-                                <span class="topic-tag">Sorting Algorithms</span>
-                                <span class="topic-tag">Graph Theory</span>
-                                <span class="topic-tag">Dynamic Programming</span>
-                            </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">🚀</div>
-                                <div class="module-info">
-                                    <h4>Capstone Project</h4>
-                                    <div class="module-duration">⏱️ 2 Weeks</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Build a complete AI+IoT project from scratch. Integrate everything you've learned—AI models, IoT devices, and hardware. Create your portfolio masterpiece.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">End-to-End Project</span>
-                                <span class="topic-tag">Portfolio Building</span>
-                                <span class="topic-tag">Presentation Skills</span>
-                                <span class="topic-tag">Career Guidance</span>
-                            </div>
+                            <button class="inline-cta inline-cta-block" onclick="bookNow()" style="margin-top: 1.5rem;">Book Your Spot Now</button>
                         </div>
                     </div>
                 </section>
@@ -1002,7 +1087,11 @@
                     <div class="features-list">
                         <div class="feature-item">
                             <strong>⏰</strong>
-                            <p><strong>Fully Flexible:</strong> Learn at your own pace, anytime, anywhere</p>
+                            <p><strong>Fastest Beginner Course:</strong> Complete in just 4 weeks</p>
+                        </div>
+                        <div class="feature-item">
+                            <strong>📦</strong>
+                            <p><strong>No Prior Experience Required:</strong> Start from zero, become job-ready</p>
                         </div>
                         <div class="feature-item">
                             <strong>♾️</strong>
@@ -1010,21 +1099,18 @@
                         </div>
                         <div class="feature-item">
                             <strong>🏆</strong>
-                            <p><strong>Certificates:</strong> Industry-recognized credentials</p>
+                            <p><strong>Industry-Recognized Certificate:</strong> With project verification</p>
                         </div>
                         <div class="feature-item">
-                            <strong>💼</strong>
-                            <p><strong>Job Placement:</strong> Resume building & interview prep</p>
+                            <strong>💬</strong>
+                            <p><strong>Personal Support & Q/A:</strong> Get help when you need it</p>
                         </div>
                         <div class="feature-item">
-                            <strong>👥</strong>
-                            <p><strong>Community Support:</strong> 500+ students to learn with</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>🎓</strong>
-                            <p><strong>Live Mentoring:</strong> Weekly sessions with experts</p>
+                            <strong>💡</strong>
+                            <p><strong>Portfolio Projects:</strong> Real projects to showcase in internships</p>
                         </div>
                     </div>
+                    <button class="inline-cta inline-cta-block" onclick="bookNow()">Enroll Today - 80% OFF</button>
                 </section>
 
                 <!-- Testimonials -->
@@ -1034,19 +1120,19 @@
                         <div class="testimonial-card">
                             <div class="stars">★★★★★</div>
                             <p class="testimonial-text">"The CS Pack completely transformed my skills. I went from zero coding knowledge to building my first AI project in just 3 months!"</p>
-                            <div class="testimonial-author">Arjun Kumar</div>
+                            <div class="testimonial-author">Riya Raj</div>
                             <div class="testimonial-role">Software Engineer, TCS</div>
                         </div>
                         <div class="testimonial-card">
                             <div class="stars">★★★★★</div>
                             <p class="testimonial-text">"Best investment I made for my career. The hands-on projects and mentorship gave me real industry experience that helped me land my dream job."</p>
-                            <div class="testimonial-author">Priya Sharma</div>
+                            <div class="testimonial-author">Vanshika Sharma</div>
                             <div class="testimonial-role">AI Engineer, Startup</div>
                         </div>
                         <div class="testimonial-card">
                             <div class="stars">★★★★★</div>
                             <p class="testimonial-text">"Exceptional quality content and supportive community. I learned more in 6 weeks here than in my entire college program!"</p>
-                            <div class="testimonial-author">Vikram Patel</div>
+                            <div class="testimonial-author">Gurjot Kaur</div>
                             <div class="testimonial-role">Robotics Engineer, R&D</div>
                         </div>
                     </div>
@@ -1082,7 +1168,7 @@
                                 <span class="faq-icon">▼</span>
                             </div>
                             <div class="faq-answer">
-                                <p>Absolutely! All course materials are available on-demand. We recommend 12 weeks, but you can complete it faster or slower based on your schedule.</p>
+                                <p>Absolutely! All course materials are available on-demand. We recommend 4 weeks, but you can complete it faster or slower based on your schedule.</p>
                             </div>
                         </div>
 
@@ -1102,7 +1188,7 @@
                                 <span class="faq-icon">▼</span>
                             </div>
                             <div class="faq-answer">
-                                <p>50+ hands-on projects, 12 modules, live mentoring sessions, community support, industry certifications, placement assistance, and lifetime access to updated materials.</p>
+                                <p>4 modules with hands-on projects, 4 weekly mini-projects, 1 capstone project, live Q&A sessions, community support, industry certifications, placement assistance, and lifetime access to updated materials.</p>
                             </div>
                         </div>
 
@@ -1112,7 +1198,7 @@
                                 <span class="faq-icon">▼</span>
                             </div>
                             <div class="faq-answer">
-                                <p>No, this is a limited-time launch offer! The discount is only valid for the first 50 students. We currently have 34 booked and only 16 spots remaining. Hurry!</p>
+                                <p>No, this is a limited-time launch offer! The discount is only valid for the first 50 students. We currently have 34 booked and only 16 spots remaining. Secure yours now!</p>
                             </div>
                         </div>
                     </div>
@@ -1120,8 +1206,8 @@
 
                 <!-- CTA Section -->
                 <section class="cta-section">
-                    <h2>Ready to Transform Your Career?</h2>
-                    <p>Join 500+ students already learning and building amazing projects with The CS Pack</p>
+                    <h2>Ready to Start Your Tech Journey?</h2>
+                    <p>Join 500+ students already learning and building real projects with The CS Pack</p>
                     <button class="cta-btn-white" onclick="bookNow()">🚀 Book Your Spot Now</button>
                 </section>
             </div>
@@ -1131,6 +1217,7 @@
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>The CS Pack</h3>
+                        <p>4-Week Complete Package</p>
                     </div>
 
                     <div class="discount-badge">80% OFF - Limited Time!</div>
@@ -1147,7 +1234,7 @@
                     </div>
 
                     <div class="timer">
-                        📅 Course Starts: Dec 15, 2025
+                        📅 Batch Starts: Dec 15, 2025
                         <br>⏰ Registration Closes In: 2-3 Days
                     </div>
 
@@ -1155,13 +1242,20 @@
                     <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
 
                     <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-                        <p style="font-size: 0.9rem; color: var(--text-light); text-align: center;">
-                            ✓ Secure Payment<br>✓ Money-back Guarantee<br>✓ No Hidden Fees
+                        <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; line-height: 1.8;">
+                            ✓ Secure Payment<br>✓ Money-back Guarantee<br>✓ No Hidden Fees<br>✓ Learn at Your Own Pace
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Floating CTA for Mobile -->
+    <div class="floating-cta" id="floatingCTA">
+        <button class="floating-btn" onclick="bookNow()" title="Book Now">
+            🚀
+        </button>
     </div>
 
     <footer>
@@ -1189,12 +1283,12 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p>📍 Global Headquarters<br>Innovation Hub, Tech Park<br>Earth</p>
-                <p>📧 hello@iralabs.com<br>📱 +1 (800) IRA-LABS</p>
+                <p>📧 ishinder@iralabs.com<br>📱 +91 8288898544 IRA-LABS</p>
             </div>
         </div>
         <div class="footer-divider">
             <p class="slogan">From Idea to Innovation.</p>
-            <p style="margin-top: 1rem;">© 2024 IRA Labs. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p style="margin-top: 1rem;">© 2025 IRA Labs. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -1224,13 +1318,34 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
                 item.classList.toggle('active');
             });
         });
 
         // Book Now Button
         function bookNow() {
-            alert('🎉 Thank you for your interest!\n\nBooking portal will be activated soon. For now, please contact us at hello@iralabs.com or call +1 (800) IRA-LABS to reserve your spot!');
+            alert('🎉 Thank you for your interest!\n\nBooking portal will be activated soon.\n\nFor now, please contact us at:\n📧 hello@iralabs.com\n📱 +1 (800) IRA-LABS\n\nSecure your spot among the last 16 available seats!');
+        }
+
+        // Hide floating CTA when sidebar is visible (desktop)
+        window.addEventListener('resize', () => {
+            const floatingCTA = document.getElementById('floatingCTA');
+            if (window.innerWidth > 1024) {
+                floatingCTA.style.display = 'none';
+            } else {
+                floatingCTA.style.display = 'block';
+            }
+        });
+
+        // Initial check
+        if (window.innerWidth > 1024) {
+            document.getElementById('floatingCTA').style.display = 'none';
         }
     </script>
 </body>
