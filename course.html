@@ -15,15 +15,22 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="IRA Labs - AI, IoT & Robotics Training">
     <meta name="twitter:description" content="Learn from zero to job-ready in 4 weeks. ₹2,999 (80% OFF). Lifetime access. Industry certifications.">
-    <title>IRA Labs - AI, IoT & Robotics Training Course | Learn from Beginners to Advanced</title>
+    <title>IRA Labs - AI, IoT & Robotics Training Course | The CS Pack</title>
     <link rel="canonical" href="https://iralabs.com">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -921,6 +928,300 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.1);
+        }
+
+        .amount-box {
+            background: rgba(0, 118, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .amount-text {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .amount-value {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-submit {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
+        }
+
+        .btn-cancel {
+            flex: 1;
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: var(--bg-dark);
+            border-color: var(--secondary);
+        }
+
+        /* Confirmation Styles */
+        .confirmation-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .confirmation-header {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .confirmation-subtext {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .details-box {
+            background: rgba(0, 118, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .detail-row {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin: 0.8rem 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(0, 118, 255, 0.2);
+            padding-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-row span:first-child {
+            font-weight: 600;
+        }
+        .detail-row span:last-child {
+            word-break: break-all;
+        }
+
+        .success-box {
+            background: #E8F5E9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #4CAF50;
+            text-align: left;
+        }
+
+        .success-text {
+            color: #2E7D32;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .success-subtext {
+            color: #2E7D32;
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+        }
+
+        .info-box {
+            background: #FFF3CD;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #FFC107;
+            text-align: left;
+        }
+
+        .info-title {
+            color: #856404;
+            margin: 0;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-list {
+            color: #856404;
+            margin: 0;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .info-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
+        }
+
+        .error-message {
+            background: #FFEBEE;
+            border: 1px solid #F44336;
+            color: #C62828;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
     </style>
 </head>
 <body>
@@ -1318,7 +1619,6 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                // Close other items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
@@ -1328,9 +1628,180 @@
             });
         });
 
-        // Book Now Button
+        // ---------- PAYMENT + MODAL LOGIC ----------
+
+        function closeModal() {
+            const modal = document.querySelector('.modal-overlay');
+            if (modal) modal.remove();
+        }
+
+        function showError(el, msg) {
+            if (!el) return;
+            el.textContent = msg;
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 4000);
+        }
+
+        // Open modal when user clicks "Book Now"
         function bookNow() {
-            alert('🎉 Thank you for your interest!\n\nBooking portal will be activated soon.\n\nFor now, please contact us at:\n📧 ishinder@iralabs.com\n📱 +191 8288898544 IRA-LABS\n\nSecure your spot among the last 16 available seats!');
+            closeModal(); // Remove any existing modal
+
+            const modal = document.createElement('div');
+            modal.id = 'booking-modal';
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h2 class="modal-header">Complete Your Registration</h2>
+                    <div class="error-message" id="errorMessage"></div>
+                    
+                    <form id="paymentForm" onsubmit="event.preventDefault(); processPayment();">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+91 XXXXXXXXXX" required>
+                        </div>
+
+                        <div class="amount-box">
+                            <div class="amount-text">Amount to Pay</div>
+                            <div class="amount-value">₹2,999</div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+                                Secure payment powered by Razorpay
+                            </p>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="submit" class="btn-submit">🚀 Proceed to Payment</button>
+                            <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        function processPayment() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const email    = document.getElementById('email').value.trim();
+            const phone    = document.getElementById('phone').value.trim();
+            const errorDiv = document.getElementById('errorMessage');
+
+            // Basic validation
+            if (!fullName) {
+                showError(errorDiv, 'Please enter your full name.');
+                return;
+            }
+            if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                showError(errorDiv, 'Please enter a valid email address.');
+                return;
+            }
+            if (!phone || !/^\+?[0-9\s]{10,15}$/.test(phone)) {
+                showError(errorDiv, 'Please enter a valid phone number (10+ digits).');
+                return;
+            }
+
+            // NOTE: For production, create the order on your backend and pass the "order_id" here.
+            // This is a client-side only implementation for demonstration.
+            const options = {
+                key: 'rzp_test_xxxxxxxxxxxxxx', // TODO: Replace with your Razorpay Key ID
+                amount: 299900, // Amount in paise (₹2,999)
+                currency: 'INR',
+                name: 'IRA Labs',
+                description: 'The CS Pack - 4 Week Bootcamp',
+                image: 'favicon_io/favicon-32x32.png', // Use an absolute URL for production
+                handler: function (response) {
+                    // This function is called after a successful payment
+                    showConfirmation(fullName, email, phone, response.razorpay_payment_id);
+                },
+                prefill: {
+                    name: fullName,
+                    email: email,
+                    contact: phone
+                },
+                theme: {
+                    color: '#0076FF'
+                },
+                modal: {
+                    ondismiss: function () {
+                        console.log('Payment popup closed by user.');
+                    }
+                }
+            };
+
+            try {
+                const rzp = new Razorpay(options);
+                rzp.on('payment.failed', function (response) {
+                    console.error('Payment Failed:', response);
+                    showError(errorDiv, 'Payment failed: ' + (response.error.description || 'Please try again or use a different payment method.'));
+                });
+                rzp.open();
+            } catch (e) {
+                console.error('Razorpay Error:', e);
+                showError(errorDiv, 'Could not initialize payment. Please check your connection and try again.');
+            }
+        }
+
+        function showConfirmation(name, email, phone, paymentId) {
+            closeModal(); // Close the input modal
+
+            const confirmModal = document.createElement('div');
+            confirmModal.id = 'confirmation-modal';
+            confirmModal.className = 'modal-overlay';
+            confirmModal.innerHTML = `
+                <div class="modal-content" style="max-width: 600px; text-align: center;">
+                    <div class="confirmation-icon">✅</div>
+                    <h2 class="confirmation-header">Payment Successful!</h2>
+                    <p class="confirmation-subtext">
+                        Welcome to <strong>The CS Pack</strong>! Your enrollment is confirmed.
+                    </p>
+
+                    <div class="details-box">
+                        <div class="detail-row">
+                            <span>📛 Name</span>
+                            <span>${name}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>📧 Email</span>
+                            <span>${email}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>📱 Phone</span>
+                            <span>${phone}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>💳 Payment ID</span>
+                            <span>${paymentId}</span>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p class="success-text">✓ A confirmation email has been sent to ${email}.</p>
+                        <p class="success-subtext">Please check your inbox (and spam folder) for course access details.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <p class="info-title">📅 Next Steps:</p>
+                        <ul class="info-list">
+                            <li>Access course materials on Dec 15, 2025.</li>
+                            <li>Join the community Telegram group (link in email).</li>
+                            <li>Get ready for Week 1!</li>
+                        </ul>
+                    </div>
+
+                    <a href="#" onclick="closeModal(); return false;" class="btn-home">🏠 Back to Site</a>
+                </div>
+            `;
+
+            document.body.appendChild(confirmModal);
         }
 
         // Hide floating CTA when sidebar is visible (desktop)
