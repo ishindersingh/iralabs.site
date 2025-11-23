@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your interactive roadmap to learning robotics from zero to hero with IRA Labs. Discover the tools, components, and step-by-step guide to build your first robot.">
+    <meta name="keywords" content="robotics roadmap, learn robotics, beginner robotics, arduino projects, electronics basics, robotics components, IRA Labs">
+    <meta name="author" content="IRA Labs - Ishinders Research Lab and Automation">
+    <title>Robotics Roadmap - From Zero to Hero | IRA Labs</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base styles copied from course.html for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0033A1;
+            --secondary: #0076FF;
+            --accent: #000000;
+            --bg-light: #FFFFFF;
+            --bg-dark: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --border: #E0E0E0;
+        }
+
+        html.dark-mode {
+            --primary: #0076FF;
+            --secondary: #00B4FF;
+            --accent: #FFFFFF;
+            --bg-light: #0F1419;
+            --bg-dark: #1A1F2E;
+            --text-dark: #E8E8E8;
+            --text-light: #A0A0A0;
+            --border: #2A2F3E;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 65px;
+        }
+
+        html.dark-mode nav {
+            background: rgba(15, 20, 25, 0.95);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .theme-toggle {
+            background: var(--bg-dark);
+            border: 2px solid var(--border);
+            color: var(--text-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
+        }
+
+        /* Main Content & Hero */
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .roadmap-hero {
+            margin-top: 100px;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .roadmap-hero h1 {
+            font-size: 3.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .roadmap-hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .roadmap-hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Interactive Roadmap Styles */
+        .interactive-roadmap {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .roadmap-stage-card {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .roadmap-stage-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stage-header {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .stage-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-content p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .stage-content ul {
+            list-style-position: inside;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-project {
+            background: rgba(0, 118, 255, 0.05);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .stage-project strong {
+            color: var(--text-dark);
+        }
+
+        .stage-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(0, 118, 255, 0.1);
+            color: var(--secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .roadmap-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover:not(:disabled) {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .nav-btn:disabled {
+            background: var(--border);
+            color: var(--text-light);
+            cursor: not-allowed;
+        }
+
+        /* Final Content Section */
+        #final-content {
+            display: none;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 3rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .item-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .item-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .item-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .item-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-list li {
+            margin-bottom: 1rem;
+        }
+
+        .resource-list a {
+            display: block;
+            background: var(--bg-dark);
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .resource-list a:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: var(--accent);
+            color: white;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+        }
+
+        html.dark-mode footer {
+            background: #0A0E14;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-section p, .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--secondary); }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .roadmap-hero h1 { font-size: 2.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .stage-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">IRA <span>Labs</span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            <a href="course.html" class="cta-btn">Enroll Now</a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <header class="roadmap-hero">
+            <h1>Your Robotics Adventure</h1>
+            <p>A fun, step-by-step guide to go from zero to building your first robot. No experience needed, just curiosity and a desire to create!</p>
+        </header>
+
+        <div class="interactive-roadmap" id="interactive-roadmap">
+            <div class="roadmap-stages-container">
+                <!-- Stage 1 -->
+                <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 1: THE SPARK ⚡</div>
+                    <h2 class="stage-title">Electronics Fundamentals</h2>
+                    <div class="stage-content">
+                        <p>Welcome to the starting line! Before we build robots, we must learn to speak their language: electricity. Here, you'll discover the fundamental rules that govern electronics and build your very first circuit.</p>
+                        <ul>
+                            <li><strong>Ohm's Law (V=IR):</strong> Understand the relationship between Voltage, Current, and Resistance. This is the golden rule of electronics.</li>
+                            <li><strong>Breadboarding:</strong> Learn to use a breadboard to create temporary circuits without soldering. It's like a sketchbook for your ideas.</li>
+                            <li><strong>Simple Circuits:</strong> Create a path for electricity to flow from a power source, through a component (like an LED), and back.</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Mini-Project:</strong> Make an LED light up! Use a battery, a resistor, and an LED on a breadboard to create your first successful circuit.
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Ohm's Law</span>
+                            <span class="tag">Breadboarding</span>
+                            <span class="tag">Circuits</span>
+                            <span class="tag">LEDs</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stage 2 -->
+                <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 2: THE BRAIN 🧠</div>
+                    <h2 class="stage-title">Intro to Microcontrollers</h2>
+                    <div class="stage-content">
+                        <p>A circuit with just power is dumb. Let's give it a brain! A microcontroller is a tiny computer you can program to control your circuit. We'll use the Arduino, the most popular choice for beginners.</p>
+                        <ul>
+                            <li><strong>Arduino IDE:</strong> Set up the software where you'll write and upload code to your Arduino board.</li>
+                            <li><strong>Basic C++:</strong> Learn the syntax for `setup()` and `loop()`, variables, and simple commands like `digitalWrite()` to turn pins on and off.</li>
+                            <li><strong>Digital vs. Analog:</strong> Understand the difference between simple ON/OFF signals (digital) and signals with a range of values (analog).</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Mini-Project:</strong> The "Hello, World!" of electronics - make the onboard LED on the Arduino blink. This is your first line of code controlling the physical world!
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Arduino IDE</span>
+                            <span class="tag">C++ Basics</span>
+                            <span class="tag">DigitalWrite</span>
+                            <span class="tag">Blink</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stage 3 -->
+                <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 3: SENSING THE WORLD 👀</div>
+                    <h2 class="stage-title">Using Sensors</h2>
+                    <div class="stage-content">
+                        <p>Now your robot can think, but it can't perceive. Let's give it senses! Sensors allow your robot to gather data from its environment, making it interactive and "smart."</p>
+                        <ul>
+                            <li><strong>Reading Inputs:</strong> Learn to use `digitalRead()` for simple sensors (like a button) and `analogRead()` for sensors with a range (like a light sensor).</li>
+                            <li><strong>Ultrasonic Sensor:</strong> Use sound waves to measure distance, allowing your robot to "see" obstacles in front of it.</li>
+                            <li><strong>IR Sensor:</strong> Use infrared light to detect objects or follow a line on the ground.</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Mini-Project:</strong> Build a "Parking Assistant." Use an ultrasonic sensor and a few LEDs. As an object gets closer, make more LEDs light up.
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Ultrasonic Sensor</span>
+                            <span class="tag">IR Sensor</span>
+                            <span class="tag">AnalogRead</span>
+                            <span class="tag">DigitalRead</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stage 4 -->
+                <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 4: MAKING THINGS MOVE 🦾</div>
+                    <h2 class="stage-title">Actuators & Motors</h2>
+                    <div class="stage-content">
+                        <p>A robot that can't move is just a fancy desk ornament. Actuators are the components that create physical motion. It's time to make your creation come alive!</p>
+                        <ul>
+                            <li><strong>Servo Motors:</strong> Control precise rotational movement (e.g., 0 to 180 degrees). Perfect for robotic arms or steering.</li>
+                            <li><strong>DC Motors:</strong> Provide continuous rotation. These are the workhorses that will drive the wheels of your robot.</li>
+                            <li><strong>Motor Drivers:</strong> An essential component that acts as a bridge between your Arduino and the power-hungry DC motors.</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Mini-Project:</strong> Create a "Waving Flag." Attach a small paper flag to a servo motor and program it to wave back and forth.
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Servo Motors</span>
+                            <span class="tag">DC Motors</span>
+                            <span class="tag">Motor Drivers (L298N)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stage 5 -->
+                <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 5: THE FIRST ROBOT 🤖</div>
+                    <h2 class="stage-title">Integration & Assembly</h2>
+                    <div class="stage-content">
+                        <p>This is the moment of truth! You'll combine all your knowledge—electronics, coding, sensors, and motors—to build a complete, autonomous robot. This involves mechanical assembly and managing power for all components.</p>
+                        <ul>
+                            <li><strong>Chassis Assembly:</strong> Build the physical frame of your robot, attaching motors and wheels.</li>
+                            <li><strong>Power Management:</strong> Learn to power your Arduino and motors separately using a dedicated battery pack.</li>
+                            <li><strong>System Integration:</strong> Write the master code that reads from sensors and controls the motors to perform a task, like avoiding walls.</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Capstone Project:</strong> Build an Obstacle-Avoiding Robot. It will roam around, and when its ultrasonic sensor "sees" a wall, it will stop, turn, and find a new path.
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Chassis Assembly</span>
+                            <span class="tag">Power Management</span>
+                            <span class="tag">System Integration</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Stage 6 -->
+                 <div class="roadmap-stage-card">
+                    <div class="stage-header">STAGE 6: GOING FURTHER 🚀</div>
+                    <h2 class="stage-title">Advanced Topics</h2>
+                    <div class="stage-content">
+                        <p>Congratulations on building your first robot! But the journey is just beginning. The world of robotics is vast. Here are some exciting paths you can explore next to level up your skills.</p>
+                        <ul>
+                            <li><strong>Wireless Control:</strong> Add a Bluetooth module to control your robot from your smartphone.</li>
+                            <li><strong>Raspberry Pi:</strong> Move to a more powerful single-board computer that can run a full operating system, enabling complex tasks like computer vision.</li>
+                            <li><strong>AI & Machine Learning:</strong> Teach your robot to learn and make decisions on its own.</li>
+                        </ul>
+                        <div class="stage-project">
+                            <strong>Next-Level Project:</strong> Create a Bluetooth-controlled car, or use a Raspberry Pi with a camera to make a robot that can follow a specific color.
+                        </div>
+                        <div class="stage-tags">
+                            <span class="tag">Bluetooth/WiFi</span>
+                            <span class="tag">Raspberry Pi</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-nav">
+                <button class="nav-btn" id="prev-btn">Previous</button>
+                <button class="nav-btn" id="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div id="final-content">
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ready to Build for Real?</h2>
+                <p>This roadmap is your map, but our course is the guided tour. Get hands-on kits, expert mentorship, and a clear path to building amazing projects.</p>
+                <a href="course.html" class="cta-btn-white">🚀 Start Learning Now</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IRA Labs</h3>
+                <p>Pioneering innovation through cutting-edge research, automation, and world-class education.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="Roadmap.html">Robotics Roadmap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 ishinder@iralabs.com<br>📱 +91 8288898544</p>
+            </div>
+        </div>
+        <div class="footer-divider">
+            <p>© 2025 IRA Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Script
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        
+        if (savedTheme === 'dark') {
+            html.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        } else {
+            html.classList.remove('dark-mode');
+            themeToggle.textContent = '🌙';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark-mode');
+            const isDark = html.classList.contains('dark-mode');
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Interactive Roadmap Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const stages = document.querySelectorAll('.roadmap-stage-card');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const finalContent = document.getElementById('final-content');
+            const interactiveRoadmap = document.getElementById('interactive-roadmap');
+            let currentStage = 0;
+
+            function updateRoadmapView() {
+                stages.forEach((stage, index) => {
+                    stage.classList.toggle('active', index === currentStage);
+                });
+
+                prevBtn.disabled = currentStage === 0;
+                
+                if (currentStage === stages.length - 1) {
+                    nextBtn.textContent = 'Finish & See What\'s Next! ✨';
+                } else {
+                    nextBtn.textContent = 'Next';
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStage < stages.length - 1) {
+                    currentStage++;
+                    updateRoadmapView();
+                } else {
+                    // Last stage, reveal the rest of the page
+                    interactiveRoadmap.style.display = 'none';
+                    finalContent.style.display = 'block';
+                    window.scrollTo({ top: finalContent.offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStage > 0) {
+                    currentStage--;
+                    updateRoadmapView();
+                }
+            });
+
+            // Initialize view
+            updateRoadmapView();
+        });
+    </script>
+</body>
+</html>
