@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IRA Labs - Learn AI, IoT, Robotics & Next-Gen Tech. The CS Pack: 4-week beginner course with 80% OFF (₹2,999). 500+ students enrolled. Industry certifications & placement support.">
-    <meta name="keywords" content="AI course, IoT training, robotics learning, tech bootcamp, beginner programming, C++, Python, IRA Labs, online course">
+    <meta name="description"
+        content="Enroll in the IRA Labs Hands-On Robotics Course. Learn to build and program robots from scratch with our comprehensive course, available with or without a hardware kit.">
+    <meta name="keywords" content="robotics course, learn robotics, arduino course, online robotics class, IRA Labs">
     <meta name="author" content="IRA Labs - Ishinders Research Lab and Automation">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="IRA Labs - From Idea to Innovation | AI, IoT & Robotics Training">
-    <meta property="og:description" content="Master AI, IoT, Robotics in 4 weeks. The CS Pack course - 80% OFF. Lifetime access, 500+ projects, industry certifications.">
-    <meta property="og:image" content="heropic.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://iralabs.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="IRA Labs - AI, IoT & Robotics Training">
-    <meta name="twitter:description" content="Learn from zero to job-ready in 4 weeks. ₹2,999 (80% OFF). Lifetime access. Industry certifications.">
-    <title>IRA Labs - AI, IoT & Robotics Training Course | The CS Pack</title>
-    <link rel="canonical" href="https://iralabs.com">
+    <title>Hands-On Robotics Course | IRA Labs</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
@@ -26,12 +18,15 @@
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Razorpay Checkout Script -->
+    <!-- Razorpay Script -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <style>
+        /* Base styles consistent with other pages */
         * {
             margin: 0;
             padding: 0;
@@ -73,6 +68,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Navigation Styles */
         nav {
             position: fixed;
             top: 0;
@@ -93,7 +89,6 @@
 
         html.dark-mode nav {
             background: rgba(15, 20, 25, 0.95);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -127,26 +122,10 @@
             font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.3s ease;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--secondary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .theme-toggle {
@@ -170,77 +149,17 @@
             border-color: var(--secondary);
         }
 
-        .cta-btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .cta-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .logo {
-                font-size: 1.3rem;
-            }
-            .theme-toggle {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            .cta-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-            }
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
         }
 
         .course-hero {
-            margin-top: 80px;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
-            padding: 4rem 5%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .course-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 118, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
-        }
-
-        .course-hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            width: 100%;
+            margin-top: 100px;
+            text-align: center;
+            padding: 4rem 0;
         }
 
         .course-hero h1 {
@@ -248,7 +167,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
@@ -259,535 +178,392 @@
             background-clip: text;
         }
 
-        .course-hero-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-
-        .meta-item strong {
-            color: var(--text-dark);
-        }
-
-        @media (max-width: 1024px) {
-            .course-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .course-hero {
-                padding: 1.5rem 4%;
-                margin-top: 65px;
-                min-height: auto;
-            }
-            .course-hero h1 {
-                font-size: 1.8rem;
-            }
-            .course-hero-meta {
-                gap: 1rem;
-                font-size: 0.95rem;
-            }
-        }
-
-        .course-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .course-grid {
+        /* Pricing Section */
+        .pricing-section {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
-            margin: 4rem 0;
-        }
-
-        .course-main {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .course-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+            margin-bottom: 4rem;
         }
 
         .pricing-card {
             background: var(--bg-dark);
-            border: 2px solid var(--border);
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2.5rem;
-            position: sticky;
-            top: 100px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
         .pricing-card:hover {
-            border-color: var(--secondary);
-            box-shadow: 0 20px 60px rgba(0, 118, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
         }
 
-        .pricing-header h3 {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
+        .pricing-card.recommended {
+            border-color: var(--primary);
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 51, 161, 0.05));
+        }
+
+        .pricing-card.flagship {
+            border-color: #FFD700;
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 215, 0, 0.05));
+        }
+
+        .pricing-card.premium {
+            border-color: #000;
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 0, 0, 0.05));
+        }
+
+        html.dark-mode .pricing-card.premium {
+            border-color: #fff;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 255, 255, 0.05));
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .pricing-header p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-
-        .discount-badge {
-            display: inline-block;
-            background: #FF6B6B;
+        .badge.popular {
+            background: var(--primary);
             color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 1.5rem 0;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        .badge.flagship {
+            background: #FFD700;
+            color: black;
         }
 
-        .price-section {
-            margin: 1.5rem 0;
+        .badge.premium {
+            background: var(--text-dark);
+            color: var(--bg-light);
         }
 
-        .original-price {
+        .pricing-card h2 {
             font-size: 1.5rem;
-            color: var(--text-light);
-            text-decoration: line-through;
             margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-card .subtitle {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .price-note {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .limited-seats {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
-            color: white;
-            padding: 1.2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            animation: pulse 2s infinite;
-        }
-
-        .timer {
-            background: #FFF3CD;
-            color: #856404;
-            padding: 1.2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .booking-btn {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary);
             margin-bottom: 1rem;
         }
 
-        .booking-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 118, 255, 0.3);
+        .positioning {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--secondary);
+            padding-left: 0.8rem;
         }
 
-        .booking-btn:active {
-            transform: translateY(-1px);
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
 
-        .back-btn {
-            width: 100%;
-            padding: 0.8rem;
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
-        .back-btn:hover {
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .made-for {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+
+        html.dark-mode .made-for {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .enroll-btn {
             background: var(--primary);
             color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .enroll-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Course Details Section */
+        .section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
         }
 
         .section-title {
-            font-size: 1.8rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .section-content p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(0, 118, 255, 0.03);
-            border-radius: 8px;
-            border-left: 3px solid var(--secondary);
-        }
-
-        .feature-item strong {
-            color: var(--text-dark);
-            min-width: 20px;
-        }
-
-        .feature-item p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        .modules-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .module-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .module-card:hover {
-            border-color: var(--secondary);
-            box-shadow: 0 10px 30px rgba(0, 118, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .module-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .module-icon {
+            text-align: center;
             font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 3rem;
         }
 
-        .module-info h4 {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .module-duration {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .module-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .module-topics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .topic-tag {
-            background: var(--primary);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .module-project {
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .faq-item {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--text-dark);
-            background: var(--bg-dark);
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: rgba(0, 118, 255, 0.05);
-            color: var(--secondary);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 1.5rem 1.5rem 1.5rem;
-        }
-
-        .faq-answer p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .testimonials-section {
-            margin: 2rem 0;
-        }
-
-        .testimonial-cards {
+        .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 1.5rem 0;
         }
 
-        .testimonial-card {
+        .detail-card {
             background: var(--bg-dark);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 2rem;
-            transition: all 0.3s ease;
         }
 
-        .testimonial-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--secondary);
-        }
-
-        .stars {
-            color: #FFB800;
+        .detail-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            color: var(--text-dark);
         }
 
-        .testimonial-text {
+        .detail-card p {
+            color: var(--text-light);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--accent);
+            color: white;
+            padding: 4rem 5%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.recommended {
+            border-color: var(--primary);
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 51, 161, 0.05));
+        }
+
+        .pricing-card.flagship {
+            border-color: #FFD700;
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 215, 0, 0.05));
+        }
+
+        .pricing-card.premium {
+            border-color: #000;
+            border-width: 2px;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 0, 0, 0.05));
+        }
+
+        html.dark-mode .pricing-card.premium {
+            border-color: #fff;
+            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 255, 255, 0.05));
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge.popular {
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge.flagship {
+            background: #FFD700;
+            color: black;
+        }
+
+        .badge.premium {
+            background: var(--text-dark);
+            color: var(--bg-light);
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-card .subtitle {
             color: var(--text-light);
             margin-bottom: 1.5rem;
-            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .positioning {
             font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--secondary);
+            padding-left: 0.8rem;
         }
 
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0.3rem;
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
 
-        .testimonial-role {
+        .features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .made-for {
             font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+
+        html.dark-mode .made-for {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .enroll-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .enroll-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Course Details Section */
+        .section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 3rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .detail-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .detail-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .detail-card p {
             color: var(--text-light);
         }
 
-        .inline-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            margin: 1.5rem 0;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .inline-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 118, 255, 0.3);
-        }
-
-        .inline-cta-block {
-            width: 100%;
-            display: block;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 4rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-btn-white {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .cta-btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            animation: slideInUp 0.5s ease;
-        }
-
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .floating-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            box-shadow: 0 8px 24px rgba(0, 118, 255, 0.4);
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .floating-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 32px rgba(0, 118, 255, 0.6);
-        }
-
+        /* Footer Styles */
         footer {
             background: var(--accent);
             color: white;
             padding: 4rem 5%;
             margin-top: 4rem;
-            transition: background 0.3s ease;
         }
 
         html.dark-mode footer {
@@ -810,10 +586,9 @@
             color: var(--secondary);
         }
 
-        .footer-section p {
+        .footer-section p,
+        .footer-links a {
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            margin-bottom: 1rem;
         }
 
         .footer-links {
@@ -825,38 +600,12 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: var(--secondary);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .social-icons a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
         }
 
         .footer-divider {
@@ -866,739 +615,326 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .slogan {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--secondary);
+        /* Responsive */
+        @media (max-width: 992px) {
+            .pricing-section {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .course-hero h1 {
+                font-size: 2.5rem;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
             }
-            footer {
-                padding: 2rem 4%;
-            }
-            .floating-cta {
-                bottom: 80px;
-                right: 10px;
-            }
-            .floating-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
-            }
         }
+    </style>
+</head>
 
-        @media (max-width: 1024px) {
-            .course-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-card {
-                position: relative;
-                top: 0;
-            }
-            .features-list {
-                grid-template-columns: 1fr;
-            }
-        }
+<body>
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">IRA <span>Labs</span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Roadmap.html">Roadmap</a></li>
+                <li><a href="kit.html">Kit</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+        </div>
+    </nav>
 
-        @media (max-width: 640px) {
-            .course-container {
-                padding: 0 4%;
-            }
-            .pricing-card {
-                padding: 1.5rem;
-            }
-            .module-card {
-                padding: 1.5rem;
-            }
-            .cta-section {
-                padding: 2rem;
-            }
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-            .booking-btn {
-                padding: 1rem;
-                font-size: 1rem;
-            }
-            .price {
-                font-size: 2.5rem;
-            }
-        }
+    <main class="main-container">
+        <header class="course-hero">
+            <h1>Hands-On Robotics <span>Course</span></h1>
+            <p>Go from absolute beginner to confident robot builder. This course provides everything you need to learn,
+                build, and innovate.</p>
+        </header>
 
+        <section class="pricing-section">
+            <!-- 1. Starter Kit -->
+            <div class="pricing-card">
+                <h2>Starter Kit</h2>
+                <p class="subtitle">Super Entry Plan</p>
+                <div class="price">₹399</div>
+                <p class="positioning">"Start the journey."</p>
+                <ul class="features">
+                    <li>Beginner-friendly Robotics roadmap PDF</li>
+                    <li>3 Recorded Lessons (Basics, Sensors)</li>
+                    <li>1 Micro-project (LED + Sensor)</li>
+                    <li>Access to IRA Community (Limited)</li>
+                    <li>Completion Certificate</li>
+                </ul>
+                <div style="margin-top: auto;">
+                    <p class="made-for"><strong>Made For:</strong> School students (8-12), Beginners</p>
+                    <button id="enroll-starter" class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- 2. Beginner Accelerator -->
+            <div class="pricing-card recommended">
+                <span class="badge popular">Most Popular</span>
+                <h2>Beginner Accelerator</h2>
+                <p class="subtitle">Best for Majority</p>
+                <div class="price">₹899</div>
+                <p class="positioning">"Start karna kaafi nahi… accelerate bhi karo."</p>
+                <ul class="features">
+                    <li><strong>Everything in Starter</strong></li>
+                    <li>Live classes: 2 classes / week (2 weeks)</li>
+                    <li>2 Hands-on Projects (Line Follower, IoT LED)</li>
+                    <li>Doubt-solving Telegram Group</li>
+                    <li>Mini internship task</li>
+                </ul>
+                <div style="margin-top: auto;">
+                    <button id="enroll-beginner" class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- 3. Pro Builder Program -->
+            <div class="pricing-card flagship">
+                <span class="badge flagship">Flagship</span>
+                <h2>Pro Builder Program</h2>
+                <p class="subtitle">Main Revenue Driver</p>
+                <div class="price">₹2,999</div>
+                <p class="positioning">"Yeh course ke baad aap aap beginner nahi… builder ban jaoge."</p>
+                <ul class="features">
+                    <li><strong>Everything in Beginner</strong></li>
+                    <li>Live Masterclasses: 3 days/week (4 weeks)</li>
+                    <li>4 Major Projects (Home Auto, Face Detect, Voice Bot, WiFi Bot)</li>
+                    <li>Sensor Kit List + Buying Links</li>
+                    <li>Personal Mentorship</li>
+                    <li>Internship Opportunity</li>
+                </ul>
+                <div style="margin-top: auto;">
+                    <button id="enroll-pro" class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- 4. IRA Full Stack Robotics Engineer -->
+            <div class="pricing-card premium">
+                <span class="badge premium">Premium</span>
+                <h2>Full Stack Engineer</h2>
+                <p class="subtitle">Premium Pathway</p>
+                <div class="price">₹14,999</div>
+                <p class="positioning">"Industry-ready robotics engineer in 8 weeks."</p>
+                <ul class="features">
+                    <li><strong>Everything in PRO</strong></li>
+                    <li>8 Weeks of Training</li>
+                    <li>Weekly 1:1 Mentorship Call</li>
+                    <li>Drones + ROS + AI Modules</li>
+                    <li>Dedicated Project Support</li>
+                    <li>Placement Assistance</li>
+                </ul>
+                <div style="margin-top: auto;">
+                    <button id="enroll-premium" class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">What You'll Build</h2>
+            <div class="details-grid">
+                <!-- Beginner -->
+                <div class="detail-card">
+                    <h3>1. Smart Light</h3>
+                    <p><strong>Level: Beginner</strong><br>Learn the basics of inputs and outputs by building a light
+                        that turns on automatically in the dark.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>2. Reverse Parking Sensor</h3>
+                    <p><strong>Level: Beginner</strong><br>Master ultrasonic sensors by creating a device that beeps
+                        faster as an object gets closer.</p>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="detail-card">
+                    <h3>3. Line Follower Robot</h3>
+                    <p><strong>Level: Intermediate</strong><br>Build a robot that can autonomously follow a black line
+                        on a white surface using IR sensors.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>4. Smart Home System</h3>
+                    <p><strong>Level: Intermediate</strong><br>Create an IoT-based system to control home appliances
+                        wirelessly using your smartphone.</p>
+                </div>
+
+                <!-- Advanced -->
+                <div class="detail-card">
+                    <h3>5. Obstacle Avoiding Robot</h3>
+                    <p><strong>Level: Advanced</strong><br>Combine motors and sensors to build a fully autonomous robot
+                        that navigates without hitting obstacles.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>6. WiFi Surveillance Bot</h3>
+                    <p><strong>Level: Advanced</strong><br>Build a remote-controlled robot with a live camera feed that
+                        you can drive from anywhere in the world.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IRA Labs</h3>
+                <p>Pioneering innovation through cutting-edge research, automation, and world-class education.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="Roadmap.html">Robotics Roadmap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 ishinder@iralabs.com<br>📱 +91 8288898544</p>
+            </div>
+        </div>
+        <div class="footer-divider">
+            <p>© 2025 IRA Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Customer Details Modal -->
+    <div id="customer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Enter Your Details</h2>
+            <p>Please provide your details to proceed with the enrollment.</p>
+            <form id="customer-form">
+                <div class="form-group">
+                    <label for="c-name">Full Name</label>
+                    <input type="text" id="c-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="c-email">Email Address</label>
+                    <input type="email" id="c-email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="c-phone">Phone Number</label>
+                    <input type="tel" id="c-phone" required placeholder="9876543210" pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="c-address">Shipping Address</label>
+                    <textarea id="c-address" required placeholder="Full address with pincode" rows="3"></textarea>
+                </div>
+                <button type="submit" class="enroll-btn">Proceed to Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
         /* Modal Styles */
-        .modal-overlay {
+        .modal {
+            display: none;
             position: fixed;
-            top: 0;
+            z-index: 2000;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
             align-items: center;
             justify-content: center;
-            z-index: 10000;
-            backdrop-filter: blur(4px);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .modal-content {
-            background: var(--bg-light);
-            padding: 2rem;
+            background-color: var(--bg-light);
+            padding: 2.5rem;
             border-radius: 16px;
-            max-width: 500px;
             width: 90%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: modalSlideIn 0.3s ease;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border);
         }
 
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        html.dark-mode .modal-content {
+            background-color: var(--bg-dark);
+            border-color: var(--border);
         }
 
-        .modal-header {
-            font-size: 1.8rem;
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        .modal h2 {
+            margin-bottom: 0.5rem;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
             font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .modal p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .form-group {
             margin-bottom: 1.2rem;
         }
 
-        .form-label {
+        .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        .form-input {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 2px solid var(--border);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            font-size: 1rem;
-            color: var(--text-dark);
             background: var(--bg-light);
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
 
-        .form-input:focus {
+        html.dark-mode .form-group input,
+        html.dark-mode .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.1);
-        }
-
-        .amount-box {
-            background: rgba(0, 118, 255, 0.05);
-            padding: 1.2rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .amount-text {
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .amount-value {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn-submit {
-            flex: 1;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
-        }
-
-        .btn-cancel {
-            flex: 1;
-            background: transparent;
-            color: var(--text-dark);
-            padding: 1rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-cancel:hover {
-            background: var(--bg-dark);
-            border-color: var(--secondary);
-        }
-
-        /* Confirmation Styles */
-        .confirmation-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            animation: scaleIn 0.5s ease;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .confirmation-header {
-            font-size: 2rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .confirmation-subtext {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .details-box {
-            background: rgba(0, 118, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-
-        .detail-row {
-            color: var(--text-dark);
-            font-weight: 500;
-            margin: 0.8rem 0;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            border-bottom: 1px solid rgba(0, 118, 255, 0.2);
-            padding-bottom: 0.8rem;
-            font-size: 0.9rem;
-        }
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-        .detail-row span:first-child {
-            font-weight: 600;
-        }
-        .detail-row span:last-child {
-            word-break: break-all;
-        }
-
-        .success-box {
-            background: #E8F5E9;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border-left: 4px solid #4CAF50;
-            text-align: left;
-        }
-
-        .success-text {
-            color: #2E7D32;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        .success-subtext {
-            color: #2E7D32;
-            margin: 0.5rem 0 0 0;
-            font-size: 0.9rem;
-        }
-
-        .info-box {
-            background: #FFF3CD;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border-left: 4px solid #FFC107;
-            text-align: left;
-        }
-
-        .info-title {
-            color: #856404;
-            margin: 0;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .info-list {
-            color: #856404;
-            margin: 0;
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .info-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-home {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            display: block;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-home:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
-        }
-
-        .error-message {
-            background: #FFEBEE;
-            border: 1px solid #F44336;
-            color: #C62828;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: none;
-        }
-
-        .error-message.show {
-            display: block;
-            animation: shake 0.3s ease;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.1);
         }
     </style>
-</head>
-<body>
-    <nav>
-        <div class="logo" onclick="window.location.href='index.html'">IRA <span>Labs</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#why-us">Why Us</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
-            <button class="cta-btn" onclick="bookNow()">Book Now</button>
-        </div>
-    </nav>
-
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>The <span>CS Pack</span></h1>
-            <div class="course-hero-meta">
-                <div class="meta-item">⏱️ <strong>Duration:</strong> 4 Weeks (Beginner → Intermediate)</div>
-                <div class="meta-item">👥 <strong>Students:</strong> 30+ Already Enrolled</div>
-                <div class="meta-item">📜 <strong>Certificate:</strong> Industry-Recognized + Project Verified</div>
-            </div>
-        </div>
-    </section>
-
-    <div class="course-container">
-        <div class="course-grid">
-            <div class="course-main">
-                <!-- Course Overview -->
-                <section>
-                    <h2 class="section-title">📖 Course Overview</h2>
-                    <div class="section-content">
-                        <p>The CS Pack is a 4-week practical training program designed for students who want to learn real tech skills from scratch — even if you have zero coding or electronics experience.</p>
-                        <p>In just 4 weeks, you'll learn the core essential skills every modern engineer needs: C++ basics, Python basics, AI tools, IoT fundamentals, digital electronics & sensors, and one complete final project.</p>
-                        <p>This course is short, focused, and beginner-friendly — specially made for college students who want real practical knowledge, not boring theory. You'll learn through hands-on tasks, beginner-focused lessons, and small weekly projects you can add to your portfolio.</p>
-                        <button class="inline-cta inline-cta-block" onclick="bookNow()">🚀 Enroll Now - Limited Spots!</button>
-                    </div>
-                </section>
-
-                <!-- What You'll Learn -->
-                <section>
-                    <h2 class="section-title">✨ What You'll Learn</h2>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>C++ Basics:</strong> Syntax, loops, functions, arrays, mini console programs</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>Python Basics:</strong> Variables, data types, libraries, automation basics</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>AI Tools for Beginners:</strong> ChatGPT, LLaMA, basic ML concepts, AI workflow</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>IoT Essentials:</strong> Arduino, ESP32, sensors, reading data, mini-projects</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>Electronics Fundamentals:</strong> Breadboard, resistors, LEDs, sensors, circuits</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>✓</strong>
-                            <p><strong>4 Hands-on Weekly Projects:</strong> One project per week + certificate capstone project</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Curriculum -->
-                <section>
-                    <h2 class="section-title">🎯 Detailed 4-Week Curriculum</h2>
-                    <div class="modules-grid">
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">📘</div>
-                                <div class="module-info">
-                                    <h4>Week 1: C++ + Basic Programming</h4>
-                                    <div class="module-duration">⏱️ 4–5 Hours</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Get started with programming fundamentals using C++. Learn syntax, variables, loops, functions, and basic problem-solving. Build your first mini-project.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">C++ Syntax</span>
-                                <span class="topic-tag">Variables & Loops</span>
-                                <span class="topic-tag">Functions</span>
-                                <span class="topic-tag">Problem-Solving</span>
-                            </div>
-                            <div class="module-project">
-                                📝 Mini Project: Digital Calculator / LED Pattern Logic Simulator
-                            </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">🐍</div>
-                                <div class="module-info">
-                                    <h4>Week 2: Python + Automation</h4>
-                                    <div class="module-duration">⏱️ 4–5 Hours</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Master Python fundamentals for automation. Learn file handling, using libraries like pandas, and create your first automation scripts.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">Python Fundamentals</span>
-                                <span class="topic-tag">File Handling</span>
-                                <span class="topic-tag">Libraries & Pandas</span>
-                                <span class="topic-tag">Automation Basics</span>
-                            </div>
-                            <div class="module-project">
-                                📝 Mini Project: Auto File Organizer or Data Analyzer Tool
-                            </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">🤖</div>
-                                <div class="module-info">
-                                    <h4>Week 3: AI Tools + IoT Basics</h4>
-                                    <div class="module-duration">⏱️ 5–6 Hours</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Discover AI tools for productivity and learn IoT fundamentals. Work with Arduino/ESP32, read sensor data, and build your first IoT project.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">AI Tools & ChatGPT</span>
-                                <span class="topic-tag">ML Workflow</span>
-                                <span class="topic-tag">Arduino/ESP32</span>
-                                <span class="topic-tag">Sensor Data Reading</span>
-                            </div>
-                            <div class="module-project">
-                                📝 Mini Project: Smart Sensor Dashboard (Basic IoT Project)
-                            </div>
-                        </div>
-
-                        <div class="module-card">
-                            <div class="module-header">
-                                <div class="module-icon">⚡</div>
-                                <div class="module-info">
-                                    <h4>Week 4: Electronics + Capstone Project</h4>
-                                    <div class="module-duration">⏱️ 6–7 Hours</div>
-                                </div>
-                            </div>
-                            <p class="module-description">Learn electronics fundamentals and integrate everything into a capstone project. Build an AI-powered IoT solution from scratch.</p>
-                            <div class="module-topics">
-                                <span class="topic-tag">Electronics Basics</span>
-                                <span class="topic-tag">Sensors & Actuators</span>
-                                <span class="topic-tag">Integration</span>
-                                <span class="topic-tag">Capstone Project</span>
-                            </div>
-                            <div class="module-project">
-                                🚀 Final Capstone Projects: Smart Home Automation • Weather Station • Smart Door Alert • Motion Detection + Telegram Alert • AI Notes Generator + IoT Data Logger<br><br>
-                                ✅ Includes: Portfolio Guidance + Certificate + Feedback
-                            </div>
-                            <button class="inline-cta inline-cta-block" onclick="bookNow()" style="margin-top: 1.5rem;">Book Your Spot Now</button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Benefits -->
-                <section>
-                    <h2 class="section-title">🎁 Why Choose The CS Pack?</h2>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <strong>⏰</strong>
-                            <p><strong>Fastest Beginner Course:</strong> Complete in just 4 weeks</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>📦</strong>
-                            <p><strong>No Prior Experience Required:</strong> Start from zero, become job-ready</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>♾️</strong>
-                            <p><strong>Lifetime Access:</strong> Never expires, always updated</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>🏆</strong>
-                            <p><strong>Industry-Recognized Certificate:</strong> With project verification</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>💬</strong>
-                            <p><strong>Personal Support & Q/A:</strong> Get help when you need it</p>
-                        </div>
-                        <div class="feature-item">
-                            <strong>💡</strong>
-                            <p><strong>Portfolio Projects:</strong> Real projects to showcase in internships</p>
-                        </div>
-                    </div>
-                    <button class="inline-cta inline-cta-block" onclick="bookNow()">Enroll Today - 80% OFF</button>
-                </section>
-
-                <!-- Testimonials -->
-                <section class="testimonials-section">
-                    <h2 class="section-title">⭐ What Students Say</h2>
-                    <div class="testimonial-cards">
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"The CS Pack completely transformed my skills. I went from zero coding knowledge to building my first AI project in just 3 months!"</p>
-                            <div class="testimonial-author">Riya Raj</div>
-                            <div class="testimonial-role">Software Engineer, TCS</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"Best investment I made for my career. The hands-on projects and mentorship gave me real industry experience that helped me land my dream job."</p>
-                            <div class="testimonial-author">Vanshika Sharma</div>
-                            <div class="testimonial-role">AI Engineer, Startup</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="stars">★★★★★</div>
-                            <p class="testimonial-text">"Exceptional quality content and supportive community. I learned more in 6 weeks here than in my entire college program!"</p>
-                            <div class="testimonial-author">Gurjot Kaur</div>
-                            <div class="testimonial-role">Robotics Engineer, R&D</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- FAQ -->
-                <section>
-                    <h2 class="section-title">❓ Frequently Asked Questions</h2>
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Do I need prior programming experience?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>No! The CS Pack is designed for beginners. We start from the basics and gradually progress to advanced topics. If you're completely new to programming, this course is perfect for you.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>How long do I have access to the course?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Forever! You get lifetime access to all course materials. Even after completing, you can revisit lessons anytime and get updates as new content is added.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Can I learn at my own pace?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Absolutely! All course materials are available on-demand. We recommend 4 weeks, but you can complete it faster or slower based on your schedule.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Will this help me get a job?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes! We provide placement assistance, resume building, interview preparation, and industry certifications. 85% of our graduates land jobs within 3 months.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>What's included with the course?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>4 modules with hands-on projects, 4 weekly mini-projects, 1 capstone project, live Q&A sessions, community support, industry certifications, placement assistance, and lifetime access to updated materials.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Is the discount permanent?</span>
-                                <span class="faq-icon">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>No, this is a limited-time launch offer! The discount is only valid for the first 50 students. We currently have 34 booked and only 16 spots remaining. Secure yours now!</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CTA Section -->
-                <section class="cta-section">
-                    <h2>Ready to Start Your Tech Journey?</h2>
-                    <p>Join 500+ students already learning and building real projects with The CS Pack</p>
-                    <button class="cta-btn-white" onclick="bookNow()">🚀 Book Your Spot Now</button>
-                </section>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="course-sidebar">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>The CS Pack</h3>
-                        <p>4-Week Complete Package</p>
-                    </div>
-
-                    <div class="discount-badge">80% OFF - Limited Time!</div>
-
-                    <div class="price-section">
-                        <div class="original-price">₹9,999</div>
-                        <div class="price">₹2,999</div>
-                        <div class="price-note">One-time payment • Lifetime access</div>
-                    </div>
-
-                    <div class="limited-seats">
-                        ⚡ HURRY! 34/50 Seats Booked
-                        <br><small>Only 16 Spots Remaining</small>
-                    </div>
-
-                    <div class="timer">
-                        📅 Batch Starts: Dec 15, 2025
-                        <br>⏰ Registration Closes In: 2-3 Days
-                    </div>
-
-                    <button class="booking-btn" onclick="bookNow()">🚀 Book Now</button>
-                    <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
-
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-                        <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; line-height: 1.8;">
-                            ✓ Secure Payment<br>✓ Money-back Guarantee<br>✓ No Hidden Fees<br>✓ Learn at Your Own Pace
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating CTA for Mobile -->
-    <div class="floating-cta" id="floatingCTA">
-        <button class="floating-btn" onclick="bookNow()" title="Book Now">
-            🚀
-        </button>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>IRA Labs</h3>
-                <p>Ishinders Research Lab and Automation — Pioneering innovation through cutting-edge research, automation, and world-class education.</p>
-                <div class="social-icons">
-                    <a href="https://twitter.com/iishinder" target="_blank">𝕏</a>
-                    <a href="https://instagram.com/iishinder" target="_blank">📷</a>
-                    <a href="https://linkedin.com/company/iralabs" target="_blank">in</a>
-                    <a href="https://youtube.com/@iishinder" target="_blank">▶</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#why-us">Why Us</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>📍 Global Headquarters<br>Innovation Hub, Tech Park<br>Earth</p>
-                <p>📧 ishinder@iralabs.com<br>📱 +91 8288898544 IRA-LABS</p>
-            </div>
-        </div>
-        <div class="footer-divider">
-            <p class="slogan">From Idea to Innovation.</p>
-            <p style="margin-top: 1rem;">© 2025 IRA Labs. All rights reserved. | Privacy Policy | Terms of Service</p>
-        </div>
-    </footer>
 
     <script>
+        // Theme Toggle Script
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
-
         const savedTheme = localStorage.getItem('theme') || 'light';
-        
+
         if (savedTheme === 'dark') {
             html.classList.add('dark-mode');
             themeToggle.textContent = '☀️';
@@ -1614,210 +950,128 @@
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
 
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                item.classList.toggle('active');
+        // Razorpay Payment Logic
+        const razorpayKey = "rzp_live_Rg5H4Y5ql7mgaF";
+
+        function openRazorpay(options) {
+            const rzp = new Razorpay(options);
+            rzp.on('payment.failed', function (response) {
+                alert("Payment Failed: " + response.error.description);
             });
-        });
-
-        // ---------- PAYMENT + MODAL LOGIC ----------
-
-        function closeModal() {
-            const modal = document.querySelector('.modal-overlay');
-            if (modal) modal.remove();
+            rzp.open();
         }
 
-        function showError(el, msg) {
-            if (!el) return;
-            el.textContent = msg;
-            el.classList.add('show');
-            setTimeout(() => el.classList.remove('show'), 4000);
-        }
-
-        // Open modal when user clicks "Book Now"
-        function bookNow() {
-            closeModal(); // Remove any existing modal
-
-            const modal = document.createElement('div');
-            modal.id = 'booking-modal';
-            modal.className = 'modal-overlay';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <h2 class="modal-header">Complete Your Registration</h2>
-                    <div class="error-message" id="errorMessage"></div>
-                    
-                    <form id="paymentForm" onsubmit="event.preventDefault(); processPayment();">
-                        <div class="form-group">
-                            <label class="form-label">Full Name *</label>
-                            <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Email Address *</label>
-                            <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Phone Number *</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="+91 XXXXXXXXXX" required>
-                        </div>
-
-                        <div class="amount-box">
-                            <div class="amount-text">Amount to Pay</div>
-                            <div class="amount-value">₹2,999</div>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.5rem 0 0 0;">
-                                Secure payment powered by Razorpay
-                            </p>
-                        </div>
-
-                        <div class="button-group">
-                            <button type="submit" class="btn-submit">🚀 Proceed to Payment</button>
-                            <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-            `;
-
-            document.body.appendChild(modal);
-        }
-
-        function processPayment() {
-            const fullName = document.getElementById('fullName').value.trim();
-            const email    = document.getElementById('email').value.trim();
-            const phone    = document.getElementById('phone').value.trim();
-            const errorDiv = document.getElementById('errorMessage');
-
-            // Basic validation
-            if (!fullName) {
-                showError(errorDiv, 'Please enter your full name.');
-                return;
-            }
-            if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-                showError(errorDiv, 'Please enter a valid email address.');
-                return;
-            }
-            if (!phone || !/^\+?[0-9\s]{10,15}$/.test(phone)) {
-                showError(errorDiv, 'Please enter a valid phone number (10+ digits).');
-                return;
-            }
-
-            // NOTE: For production, create the order on your backend and pass the "order_id" here.
-            // This is a client-side only implementation for demonstration.
+        // Generic Payment Handler
+        function handlePayment(amount, description, notes, customerData) {
             const options = {
-                key: 'rzp_live_Rg5H4Y5ql7mgaF', // TODO: Replace with your Razorpay Key ID
-                amount: 299900, // Amount in paise (₹2,999)
-                currency: 'INR',
-                name: 'IRA Labs',
-                description: 'The CS Pack - 4 Week Bootcamp',
-                image: 'favicon_io/favicon-32x32.png', // Use an absolute URL for production
-                handler: function (response) {
-                    // This function is called after a successful payment
-                    showConfirmation(fullName, email, phone, response.razorpay_payment_id);
+                "key": razorpayKey,
+                "amount": amount, // Amount in paise
+                "currency": "INR",
+                "name": "IRA Labs",
+                "description": description,
+                "image": "https://via.placeholder.com/150",
+                "handler": function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    // Redirect or show success message
                 },
-                prefill: {
-                    name: fullName,
-                    email: email,
-                    contact: phone
+                "prefill": {
+                    "name": customerData.name,
+                    "email": customerData.email,
+                    "contact": customerData.phone
                 },
-                theme: {
-                    color: '#0076FF'
+                "notes": {
+                    ...notes,
+                    "shipping_address": customerData.address
                 },
-                modal: {
-                    ondismiss: function () {
-                        console.log('Payment popup closed by user.');
-                    }
+                "theme": {
+                    "color": "#0033A1"
                 }
             };
+            openRazorpay(options);
+        }
 
-            try {
-                const rzp = new Razorpay(options);
-                rzp.on('payment.failed', function (response) {
-                    console.error('Payment Failed:', response);
-                    showError(errorDiv, 'Payment failed: ' + (response.error.description || 'Please try again or use a different payment method.'));
-                });
-                rzp.open();
-            } catch (e) {
-                console.error('Razorpay Error:', e);
-                showError(errorDiv, 'Could not initialize payment. Please check your connection and try again.');
+        // Modal & Form Logic
+        const modal = document.getElementById("customer-modal");
+        const closeBtn = document.querySelector(".close-modal");
+        const form = document.getElementById("customer-form");
+        let currentCourseData = null;
+
+        function openModal(courseData) {
+            currentCourseData = courseData;
+            modal.style.display = "flex";
+        }
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
 
-        function showConfirmation(name, email, phone, paymentId) {
-            closeModal(); // Close the input modal
+        form.onsubmit = function (e) {
+            e.preventDefault();
 
-            const confirmModal = document.createElement('div');
-            confirmModal.id = 'confirmation-modal';
-            confirmModal.className = 'modal-overlay';
-            confirmModal.innerHTML = `
-                <div class="modal-content" style="max-width: 600px; text-align: center;">
-                    <div class="confirmation-icon">✅</div>
-                    <h2 class="confirmation-header">Payment Successful!</h2>
-                    <p class="confirmation-subtext">
-                        Welcome to <strong>The CS Pack</strong>! Your enrollment is confirmed.
-                    </p>
+            const customerData = {
+                name: document.getElementById("c-name").value,
+                email: document.getElementById("c-email").value,
+                phone: document.getElementById("c-phone").value,
+                address: document.getElementById("c-address").value
+            };
 
-                    <div class="details-box">
-                        <div class="detail-row">
-                            <span>📛 Name</span>
-                            <span>${name}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span>📧 Email</span>
-                            <span>${email}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span>📱 Phone</span>
-                            <span>${phone}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span>💳 Payment ID</span>
-                            <span>${paymentId}</span>
-                        </div>
-                    </div>
-
-                    <div class="success-box">
-                        <p class="success-text">✓ A confirmation email has been sent to ${email}.</p>
-                        <p class="success-subtext">Please check your inbox (and spam folder) for course access details.</p>
-                    </div>
-
-                    <div class="info-box">
-                        <p class="info-title">📅 Next Steps:</p>
-                        <ul class="info-list">
-                            <li>Access course materials on Dec 15, 2025.</li>
-                            <li>Join the community Telegram group (link in email).</li>
-                            <li>Get ready for Week 1!</li>
-                        </ul>
-                    </div>
-
-                    <a href="#" onclick="closeModal(); return false;" class="btn-home">🏠 Back to Site</a>
-                </div>
-            `;
-
-            document.body.appendChild(confirmModal);
-        }
-
-        // Hide floating CTA when sidebar is visible (desktop)
-        window.addEventListener('resize', () => {
-            const floatingCTA = document.getElementById('floatingCTA');
-            if (window.innerWidth > 1024) {
-                floatingCTA.style.display = 'none';
-            } else {
-                floatingCTA.style.display = 'block';
+            if (currentCourseData) {
+                handlePayment(
+                    currentCourseData.amount,
+                    currentCourseData.description,
+                    currentCourseData.notes,
+                    customerData
+                );
+                modal.style.display = "none";
             }
-        });
+        };
 
-        // Initial check
-        if (window.innerWidth > 1024) {
-            document.getElementById('floatingCTA').style.display = 'none';
-        }
+        // 1. Starter Kit
+        document.getElementById('enroll-starter').onclick = function (e) {
+            e.preventDefault();
+            openModal({
+                amount: "39900",
+                description: "Starter Kit - Robotics",
+                notes: { product: "Starter Kit" }
+            });
+        };
+
+        // 2. Beginner Accelerator
+        document.getElementById('enroll-beginner').onclick = function (e) {
+            e.preventDefault();
+            openModal({
+                amount: "89900",
+                description: "Beginner Accelerator - Robotics",
+                notes: { product: "Beginner Accelerator" }
+            });
+        };
+
+        // 3. Pro Builder Program
+        document.getElementById('enroll-pro').onclick = function (e) {
+            e.preventDefault();
+            openModal({
+                amount: "299900",
+                description: "Pro Builder Program - Robotics",
+                notes: { product: "Pro Builder Program" }
+            });
+        };
+
+        // 4. Full Stack Engineer
+        document.getElementById('enroll-premium').onclick = function (e) {
+            e.preventDefault();
+            openModal({
+                amount: "1499900",
+                description: "Full Stack Robotics Engineer",
+                notes: { product: "Full Stack Engineer" }
+            });
+        };
     </script>
 </body>
+
 </html>
