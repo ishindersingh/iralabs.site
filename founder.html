@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishinder | Founder, Engineer & Tech Innovator</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Meet Ishinder, Founder of IRA Labs and Computer Science student at Chandigarh University. An Embedded Systems Engineer bridging the gap between deep-tech research and accessible education.">
+    <meta name="keywords"
+        content="Ishinder IRA Labs, Embedded Systems Engineer, Chandigarh University Student, Robotics Mentor Mohali, Tech Entrepreneur Punjab, IoT Firmware Development, Linux Cybersecurity, The Core Systems Intern">
+    <meta name="author" content="Ishinder - IRA Labs">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES (MATCHING BRAND IDENTITY) --- */
+        :root {
+            --primary: #0033A1;
+            --secondary: #0076FF;
+            --accent: #1A1A1A;
+            --bg-light: #FFFFFF;
+            --bg-off: #F5F7FA;
+            --text-main: #1A1A1A;
+            --text-sub: #555555;
+            --border: #E0E0E0;
+            --success: #10B981;
+        }
+
+        html.dark-mode {
+            --primary: #3B82F6;
+            --secondary: #60A5FA;
+            --accent: #FFFFFF;
+            --bg-light: #0F1419;
+            --bg-off: #161B22;
+            --text-main: #F3F4F6;
+            --text-sub: #9CA3AF;
+            --border: #2F3336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: 70px;
+        }
+
+        html.dark-mode nav {
+            background: rgba(15, 20, 25, 0.95);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        /* --- HERO SECTION --- */
+        .profile-hero {
+            margin-top: 70px;
+            padding: 6rem 5%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(0, 118, 255, 0.05), transparent 50%);
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px rgba(0, 51, 161, 0.1);
+            border: 1px solid var(--border);
+            background-color: #ddd;
+        }
+
+        .profile-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-text h1 span {
+            color: var(--secondary);
+        }
+
+        .profile-role {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 51, 161, 0.05);
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .profile-bio {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .bg-off {
+            background: var(--bg-off);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* --- EXPERIENCE CARDS --- */
+        .exp-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s;
+        }
+
+        .exp-card:hover {
+            transform: translateX(5px);
+        }
+
+        .exp-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-card span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-card p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        /* --- SKILLS & VALUES --- */
+        .tech-stack {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text-main);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .tech-tag:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .value-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .quote-text {
+            font-size: 1.6rem;
+            font-family: 'Space Grotesk';
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--bg-off);
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-sub);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .profile-hero,
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-hero {
+                text-align: center;
+            }
+
+            .profile-img {
+                margin: 0 auto;
+                order: -1;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">IRA <span>Labs</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="course.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <a href="#connect" class="cta-btn">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero Profile -->
+    <section class="profile-hero">
+        <div class="profile-text">
+            <span class="profile-role">Founder | Embedded Engineer | Innovator</span>
+            <h1>Who is <span>Ishinder?</span></h1>
+            <p class="profile-bio">
+                A <strong>Computer Science Student at Chandigarh University</strong> and the Founder of IRA Labs.
+                <br><br>
+                Ishinder combines academic research with real-world entrepreneurial experience. From repairing
+                components in a small room to building scalable automation systems, he is on a mission to bridge the gap
+                between deep-tech research and accessible engineering education.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-tag">Embedded Systems</span>
+                <span class="tech-tag">IoT & Firmware</span>
+                <span class="tech-tag">Linux & Security</span>
+                <span class="tech-tag">AI Integration</span>
+                <span class="tech-tag">Robotics</span>
+            </div>
+        </div>
+        <div>
+            <!-- Replace with actual image -->
+            <img src="founder.jfif" alt="Ishinder Profile" class="profile-img">
+        </div>
+    </section>
+
+    <!-- The Journey (Mix of Story & Professional) -->
+    <section class="bg-off">
+        <div class="content-grid">
+            <!-- Left: The Story -->
+            <div>
+                <h2 class="section-title">The Journey</h2>
+                <p style="color: var(--text-sub); margin-bottom: 1rem;">
+                    Born and raised in Punjab, Ishinder started his journey in a small room with almost zero
+                    money—salvaging parts and learning engineering hands-on. This "hacker" mindset led him to value
+                    practical skills over rote memorization.
+                </p>
+                <p style="color: var(--text-sub); margin-bottom: 1rem;">
+                    Today, he balances his role as a student at <strong>Chandigarh University</strong> with his
+                    responsibilities as a Founder, ensuring that IRA Labs remains grounded in the realities of modern
+                    engineering.
+                </p>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Professional Milestones</h3>
+                <div class="exp-card">
+                    <h4>Founder & Lead Researcher</h4>
+                    <span>Ishinders Research Lab and Automation (IRA Labs)</span>
+                    <p>Building a deep-tech innovation hub. Developing robotics products and creating a movement for
+                        authentic engineering education.</p>
+                </div>
+                <div class="exp-card" style="border-left-color: var(--secondary);">
+                    <h4>Embedded Systems Intern</h4>
+                    <span>The Core Systems</span>
+                    <p>Gained practical expertise in microcontrollers, firmware development, and IoT solutions. Worked
+                        on optimizing hardware-software integration.</p>
+                </div>
+            </div>
+
+            <!-- Right: The Philosophy & Vision -->
+            <div>
+                <h2 class="section-title">Vision & Philosophy</h2>
+                <p style="color: var(--text-sub);">
+                    "Engineering is not memorizing formulas—it's building things that actually work."
+                </p>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>🔬 Deep-Tech Research</h3>
+                        <p>Exploring Linux, Cybersecurity, and AI to build scalable and optimized systems at both
+                            hardware and software levels.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>🎓 Authentic Education</h3>
+                        <p>Countering the "fake promises" of the industry. No theory-only teaching. IRA Labs focuses on
+                            real builds, debugging, and code.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>🚀 Entrepreneurship</h3>
+                        <p>Bridging the gap between cutting-edge research and profitability through digital services,
+                            courses, and automation solutions.</p>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-light); border-radius: 12px; border: 1px solid var(--border);">
+                    <h3 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.5rem;">Core Competencies
+                    </h3>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.8rem;">C/C++</span>
+                        <span class="tech-tag" style="font-size: 0.8rem;">Python</span>
+                        <span class="tech-tag" style="font-size: 0.8rem;">Microcontrollers</span>
+                        <span class="tech-tag" style="font-size: 0.8rem;">System Design</span>
+                        <span class="tech-tag" style="font-size: 0.8rem;">Startups</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote / Message -->
+    <section class="quote-section">
+        <div class="quote-text">
+            "If you feel lost in engineering, confused about your future or overwhelmed by books — don’t worry. I was
+            exactly where you are. All you need is the right guidance and the courage to start small."
+        </div>
+        <p style="color: rgba(255,255,255,0.9);">— Ishinder</p>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="connect" style="text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Let’s Connect & Innovate</h2>
+        <p style="max-width: 700px; margin: 0 auto 2rem; color: var(--text-sub);">
+            I am always open to collaborations, learning opportunities, and networking with professionals in the tech
+            and startup ecosystem. Whether for research, automation projects, or just a tech chat.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:ishinder.dev@gmail.com" class="cta-btn">Email Me</a>
+            <a href="https://www.linkedin.com/in/ishinder-singh-0707b5355/" target="_blank" class="cta-btn"
+                style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">LinkedIn</a>
+            <a href="https://instagram.com/iishinder" target="_blank" class="cta-btn"
+                style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Instagram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>IRA Labs</h3>
+                <p>Ishinders Research Lab and Automation. Tricity’s premier hub for Robotics, AI, and Future-Tech
+                    education.</p>
+                <div style="margin-top: 1rem;">
+                    <strong>📍 Location:</strong><br>
+                    Kharar, Punjab<br>
+                    (Serving Mohali, Chandigarh, Panchkula)
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="course.html">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>📧 ishinder@iralabs.com</p>
+                <p>Based in Kharar, Punjab</p>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.9rem; color: var(--text-sub);">
+            © 2025 Ishinder Singh. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark-mode');
+            if (html.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+
+</html>
