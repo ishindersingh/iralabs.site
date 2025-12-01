@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRA Labs – Chhattisgarh Chapter | Building the Future of Robotics & AI</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="IRA Labs Chhattisgarh Chapter - Empowering students with hands-on robotics, AI, and STEM education. Join the community led by certified IRA Chapter Leaders.">
+    <meta name="keywords"
+        content="Robotics Classes in Chhattisgarh, STEM Education Chhattisgarh, AI Course Chhattisgarh, Robotics Workshop Chhattisgarh, IRA Labs Chhattisgarh, Robotics for Kids Chhattisgarh, Engineering Projects Chhattisgarh">
+    <meta name="author" content="IRA Labs Chhattisgarh Chapter">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES (MATCHING BRAND IDENTITY) --- */
+        :root {
+            --primary: #0033A1;
+            /* Deep Corporate Blue */
+            --secondary: #0076FF;
+            /* Tech Bright Blue */
+            --accent: #1A1A1A;
+            /* Strong Dark */
+            --bg-light: #FFFFFF;
+            --bg-off: #F5F7FA;
+            /* Light Grey for sections */
+            --text-main: #1A1A1A;
+            --text-sub: #555555;
+            --border: #E0E0E0;
+            --success: #10B981;
+        }
+
+        html.dark-mode {
+            --primary: #3B82F6;
+            --secondary: #60A5FA;
+            --accent: #FFFFFF;
+            --bg-light: #0F1419;
+            --bg-off: #161B22;
+            --text-main: #F3F4F6;
+            --text-sub: #9CA3AF;
+            --border: #2F3336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: 70px;
+        }
+
+        html.dark-mode nav {
+            background: rgba(15, 20, 25, 0.9);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            margin-top: 70px;
+            padding: 5rem 5%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(0, 118, 255, 0.1), transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 118, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 118, 255, 0.15);
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .hero-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        /* --- WHY US (GRID) --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-off);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* --- COURSES (PRICING STYLE) --- */
+        .courses-section {
+            background: var(--bg-off);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .course-card.highlight {
+            border: 2px solid var(--secondary);
+            background: linear-gradient(to bottom, var(--bg-light), rgba(0, 118, 255, 0.03));
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .course-price {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk';
+        }
+
+        .course-desc {
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            min-height: 45px;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .course-features li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .course-features li::before {
+            content: "✓";
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .course-btn {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        .course-btn:hover {
+            background: var(--secondary);
+        }
+
+        .course-btn.outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .course-btn.outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- SERVICES (LIST STYLE) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-off);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .service-icon {
+            background: var(--bg-light);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        /* --- LEADER PROFILE --- */
+        .leader-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .leader-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-off);
+            flex-shrink: 0;
+        }
+
+        .leader-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .leader-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .leader-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-sub);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--bg-off);
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-col p {
+            color: var(--text-sub);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-sub);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .location-tag {
+                margin: 0 auto 1.5rem;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-img {
+                width: 90%;
+                margin-top: 2rem;
+            }
+
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .leader-details {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">IRA <span>Labs</span></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#offerings">Offerings</a>
+            <a href="#courses">Courses</a>
+            <a href="#leader">Leader</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌙</button>
+            <a href="#courses" class="cta-btn">Join Community</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="location-tag">📍 Chhattisgarh</div>
+                <h1>Sreyatech – <span>IRA Labs</span></h1>
+                <p class="hero-subtitle">Building the Future of Robotics & AI in Chhattisgarh. Hands-on learning,
+                    real-world
+                    projects, and a local community led by certified IRA Chapter Leaders.</p>
+                <div class="hero-actions">
+                    <a href="#courses" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1rem;">Explore
+                        Courses</a>
+                    <a href="#contact" class="btn-outline">Contact Chapter Lead</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="heropic.png" alt="Students learning robotics in Chhattisgarh" class="hero-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2>About Sreyatech</h2>
+            <p>Sreyatech is a regional extension of IRA Labs India.</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-sub); font-size: 1.1rem;">
+            <p style="margin-bottom: 1.5rem;">
+                Dedicated to empowering school & college students with robotics, electronics, AI, and STEM skills.
+                Our mission is simple: <strong>Make world-class robotics education accessible to every student in
+                    Chhattisgarh.</strong>
+            </p>
+            <p>
+                This chapter is operated and managed by certified IRA Chapter Leaders who follow the official IRA
+                curriculum, content delivery, and student support models.
+            </p>
+        </div>
+    </section>
+
+    <!-- Leader Section -->
+    <section id="leader" style="background: var(--bg-off);">
+        <div class="section-header">
+            <h2>Meet Your Chapter Leader</h2>
+            <p>Guided by passion and expertise.</p>
+        </div>
+        <div class="leader-card">
+            <img src="Chhattisgarh.jpg" alt="Aayush Rajput - Chapter Leader" class="leader-img">
+            <div class="leader-info">
+                <h3>Aayush Rajput</h3>
+                <span class="leader-role">IRA Sreyatech Lead</span>
+                <p style="color: var(--text-sub);">
+                    A dedicated and technically strong Electronics & Telecommunication Engineer with hands-on experience
+                    in IoT systems, sensor-based automation, and microcontroller programming. Currently working as an
+                    Atal Tinkering Lab Trainer, guiding students in innovative STEM & IoT projects. Skilled in
+                    designing, building, and troubleshooting IoT prototypes using Arduino, NodeMCU, ESP32, sensors,
+                    wireless modules, and automation components.
+                </p>
+                <div class="leader-details">
+                    <div class="contact-item">📧 aayushrajput822@gmail.com</div>
+                    <div class="contact-item">📱 8223983094</div>
+                    <div class="contact-item">📍 Chhattisgarh</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section id="offerings">
+        <div class="section-header">
+            <h2>What We Offer</h2>
+            <p>Comprehensive learning programs for every stage.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">🤖</div>
+                <div>
+                    <h3>4-Week Robotics Program</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Online/Offline Hybrid. Hands-on learning with
+                        real components delivered to your home. Beginner-friendly & project-based.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📅</div>
+                <div>
+                    <h3>Regular Workshops</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Weekend physical workshops and meetups for
+                        school & college students to build together.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">💡</div>
+                <div>
+                    <h3>"Idea to Innovation" Bootcamp</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">A flagship program where students build their
+                        own working robot in 30 days.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🧩</div>
+                <div>
+                    <h3>STEM Foundation (Age 10–15)</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Simple, fun, practical STEM training designed
+                        specifically for younger students.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🎓</div>
+                <div>
+                    <h3>College Partnerships</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">Guest lectures, hackathons & innovation
+                        challenges for engineering colleges.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏫</div>
+                <div>
+                    <h3>School Robotics Labs</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-sub);">We help schools build affordable robotics labs
+                        with curriculum & teacher training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" style="background: var(--bg-off);">
+        <div class="section-header">
+            <h2>Why Choose IRA Labs? (Sreyatech Edition)</h2>
+            <p>Real skills, real community, real growth.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🛠️</span>
+                <h3>Real Projects</h3>
+                <p>Not just theory. Every course includes hands-on components and working robots.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">👥</span>
+                <h3>4,000+ Students</h3>
+                <p>Chhattisgarh students get exclusive access to the India-wide Discord/WhatsApp community.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💰</span>
+                <h3>Affordable Pricing</h3>
+                <p>Quality robotics education starting at ₹399, making it accessible for everyone.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">👨‍🏫</span>
+                <h3>Certified Instructors</h3>
+                <p>Chapter Leaders are trained & supervised by IRA Labs HQ to ensure quality.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3>Career-Oriented</h3>
+                <p>Robotics, AI, sensors, coding, mechanical design — everything required for the future.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📜</span>
+                <h3>IRA Certification</h3>
+                <p>Official certificate from IRA Labs after completing the program.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="section-header">
+            <h2>Courses Available</h2>
+            <p>Start your journey today.</p>
+        </div>
+        <div class="courses-grid">
+            <!-- Course 1 -->
+            <div class="course-card">
+                <span class="course-title">IRA Starter Robotics</span>
+                <div class="course-price">₹399</div>
+                <p class="course-desc">Introduction to the world of robotics.</p>
+                <ul class="course-features">
+                    <li>Basic Electronics</li>
+                    <li>First Robot Build</li>
+                    <li>Online Guidance</li>
+                    <li>Certificate</li>
+                </ul>
+                <button class="course-btn outline">Enroll Now</button>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <span class="course-title">Level-1 Practical Robotics</span>
+                <div class="course-price">₹899</div>
+                <p class="course-desc">Deep dive into sensors and mechanisms.</p>
+                <ul class="course-features">
+                    <li>Sensor Integration</li>
+                    <li>Motor Drivers</li>
+                    <li>Logic Building</li>
+                    <li>Project Kit Available</li>
+                </ul>
+                <button class="course-btn outline">Enroll Now</button>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card highlight">
+                <span class="badge">Best Value</span>
+                <span class="course-title">Complete Robotics Mastery</span>
+                <div class="course-price">₹2,999</div>
+                <p class="course-desc">Comprehensive program from basics to advanced.</p>
+                <ul class="course-features">
+                    <li>Arduino & Coding</li>
+                    <li>Complex Projects</li>
+                    <li>IoT Introduction</li>
+                    <li>Full Kit Included</li>
+                </ul>
+                <button class="course-btn">Enroll Now</button>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="course-card">
+                <span class="badge" style="background: #111;">Premium</span>
+                <span class="course-title">Advanced Robotics + AI</span>
+                <div class="course-price">₹14,999</div>
+                <p class="course-desc">For serious learners wanting to master AI & Robotics.</p>
+                <ul class="course-features">
+                    <li>Computer Vision</li>
+                    <li>Advanced IoT</li>
+                    <li>Python for Robotics</li>
+                    <li>Capstone Project</li>
+                </ul>
+                <button class="course-btn outline">Enroll Now</button>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600;">
+                📍 Offline Weekend Robotics Classes – Chhattisgarh
+            </p>
+        </div>
+    </section>
+
+    <!-- Success Highlights -->
+    <section id="success" style="background: var(--bg-off);">
+        <div class="section-header">
+            <h2>Student Success Highlights</h2>
+            <p>What our students have achieved.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" style="text-align: center;">
+                <span class="feature-icon" style="font-size: 3rem;">🎓</span>
+                <h3>100+ Students</h3>
+                <p>Trained in robotics through IRA Chapters.</p>
+            </div>
+            <div class="feature-card" style="text-align: center;">
+                <span class="feature-icon" style="font-size: 3rem;">🤖</span>
+                <h3>Innovative Builds</h3>
+                <p>Line-following bots, obstacle avoiders, wireless cars, and IoT devices.</p>
+            </div>
+            <div class="feature-card" style="text-align: center;">
+                <span class="feature-icon" style="font-size: 3rem;">🌟</span>
+                <h3>Featured</h3>
+                <p>Chapter projects featured on Instagram & YouTube.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q: Classes online hain ya offline?</div>
+                <div class="faq-answer">Both. Online with live sessions, and optional offline meetups in Chhattisgarh.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Components milte hain?</div>
+                <div class="faq-answer">Yes, for selected courses you receive a full component kit delivered to your
+                    home.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Certification milta hai?</div>
+                <div class="faq-answer">Yes. IRA Labs HQ provides digital & printed certificates.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>IRA Labs – Sreyatech</h3>
+                <p>“From Idea to Innovation.”</p>
+                <div style="margin-top: 1rem;">
+                    <strong>📍 Location:</strong><br>
+                    Chhattisgarh
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Main Website</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" id="contact">
+                <h3>Contact</h3>
+                <p>Join the Chhattisgarh Chapter today!</p>
+                <p>📧 aayushrajput822@gmail.com</p>
+                <p>📱 8223983094</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; color: var(--text-sub); font-size: 0.9rem;">
+            © 2025 IRA Labs Chhattisgarh Chapter. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check local storage or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark-mode');
+            if (html.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
