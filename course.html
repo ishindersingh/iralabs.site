@@ -294,190 +294,6 @@
             padding-left: 1.5rem;
             position: relative;
             color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        .made-for {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            background: rgba(0, 0, 0, 0.03);
-            padding: 0.5rem;
-            border-radius: 6px;
-        }
-
-        html.dark-mode .made-for {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .enroll-btn {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: block;
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .enroll-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* Course Details Section */
-        .section {
-            padding: 4rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 3rem;
-        }
-
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .detail-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .detail-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .detail-card p {
-            color: var(--text-light);
-        }
-
-        /* Footer Styles */
-        footer {
-            background: var(--accent);
-            color: white;
-            padding: 4rem 5%;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            border-color: var(--primary);
-        }
-
-        .pricing-card.recommended {
-            border-color: var(--primary);
-            border-width: 2px;
-            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 51, 161, 0.05));
-        }
-
-        .pricing-card.flagship {
-            border-color: #FFD700;
-            border-width: 2px;
-            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 215, 0, 0.05));
-        }
-
-        .pricing-card.premium {
-            border-color: #000;
-            border-width: 2px;
-            background: linear-gradient(to bottom, var(--bg-dark), rgba(0, 0, 0, 0.05));
-        }
-
-        html.dark-mode .pricing-card.premium {
-            border-color: #fff;
-            background: linear-gradient(to bottom, var(--bg-dark), rgba(255, 255, 255, 0.05));
-        }
-
-        .badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .badge.popular {
-            background: var(--primary);
-            color: white;
-        }
-
-        .badge.flagship {
-            background: #FFD700;
-            color: black;
-        }
-
-        .badge.premium {
-            background: var(--text-dark);
-            color: var(--bg-light);
-        }
-
-        .pricing-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .pricing-card .subtitle {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .positioning {
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            border-left: 3px solid var(--secondary);
-            padding-left: 0.8rem;
-        }
-
-        .features {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .features li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-light);
-            font-size: 0.95rem;
         }
 
         .features li::before {
@@ -635,6 +451,99 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* New Styles for Conversion & Info */
+        .batch-start {
+            background: rgba(0, 51, 161, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            border: 1px solid rgba(0, 51, 161, 0.2);
+        }
+
+        html.dark-mode .batch-start {
+            background: rgba(0, 118, 255, 0.15);
+            color: var(--secondary);
+            border-color: rgba(0, 118, 255, 0.3);
+        }
+
+        .syllabus-toggle {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .syllabus-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .syllabus-content {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        html.dark-mode .syllabus-content {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .syllabus-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .syllabus-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .syllabus-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .urgency-badge {
+            font-size: 0.8rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
     </style>
 </head>
 
@@ -661,10 +570,12 @@
         <section class="pricing-section">
             <!-- 1. Starter Kit -->
             <div class="pricing-card">
+                <div class="batch-start">Batch Starts: 6th December</div>
                 <h2>Starter Kit</h2>
                 <p class="subtitle">Super Entry Plan</p>
                 <div class="price">₹399</div>
                 <p class="positioning">"Start the journey."</p>
+                <span class="urgency-badge">🔥 Limited Seats Left</span>
                 <ul class="features">
                     <li>Beginner-friendly Robotics roadmap PDF</li>
                     <li>3 Recorded Lessons (Basics, Sensors)</li>
@@ -672,19 +583,38 @@
                     <li>Access to IRA Community (Limited)</li>
                     <li>Completion Certificate</li>
                 </ul>
+                <button class="syllabus-toggle" onclick="toggleSyllabus(this)">
+                    <span>View Syllabus</span>
+                    <span>▼</span>
+                </button>
+                <div class="syllabus-content" style="display: none;">
+                    <ul class="syllabus-list">
+                        <li><strong>Module 1:</strong> Introduction to Robotics & History</li>
+                        <li><strong>Module 2:</strong> Understanding Electronics (Voltage, Current, Resistance)</li>
+                        <li><strong>Module 3:</strong> Deep Dive into Sensors (IR, Ultrasonic, LDR)</li>
+                        <li><strong>Module 4:</strong> Circuit Building on Breadboard</li>
+                        <li><strong>Module 5:</strong> Hands-on Project: Automatic Street Light</li>
+                    </ul>
+                </div>
                 <div style="margin-top: auto;">
                     <p class="made-for"><strong>Made For:</strong> School students (8-12), Beginners</p>
                     <button id="enroll-starter" class="enroll-btn">Enroll Now</button>
+                    <div class="trust-badges">
+                        <div class="trust-item">🔒 Secure</div>
+                        <div class="trust-item">⭐ 4.8/5</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 2. Beginner Accelerator -->
             <div class="pricing-card recommended">
                 <span class="badge popular">Most Popular</span>
+                <div class="batch-start">Batch Starts: 6th December</div>
                 <h2>Beginner Accelerator</h2>
                 <p class="subtitle">Best for Majority</p>
                 <div class="price">₹899</div>
                 <p class="positioning">"Start karna kaafi nahi… accelerate bhi karo."</p>
+                <span class="urgency-badge">⚡ High Demand</span>
                 <ul class="features">
                     <li><strong>Everything in Starter</strong></li>
                     <li>Live classes: 2 classes / week (2 weeks)</li>
@@ -692,18 +622,38 @@
                     <li>Doubt-solving Telegram Group</li>
                     <li>Mini internship task</li>
                 </ul>
+                <button class="syllabus-toggle" onclick="toggleSyllabus(this)">
+                    <span>View Syllabus</span>
+                    <span>▼</span>
+                </button>
+                <div class="syllabus-content" style="display: none;">
+                    <ul class="syllabus-list">
+                        <li><strong>Module 1:</strong> Introduction to Microcontrollers (Arduino/ESP)</li>
+                        <li><strong>Module 2:</strong> C++ Programming Basics for Robotics</li>
+                        <li><strong>Module 3:</strong> Motor Drivers & Actuators Control</li>
+                        <li><strong>Module 4:</strong> Logic Building for Autonomous Robots</li>
+                        <li><strong>Module 5:</strong> Project: Line Follower Robot</li>
+                        <li><strong>Module 6:</strong> Introduction to IoT & Cloud Control</li>
+                    </ul>
+                </div>
                 <div style="margin-top: auto;">
                     <button id="enroll-beginner" class="enroll-btn">Enroll Now</button>
+                    <div class="trust-badges">
+                        <div class="trust-item">🔒 Secure</div>
+                        <div class="trust-item">⭐ 4.9/5</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 3. Pro Builder Program -->
             <div class="pricing-card flagship">
                 <span class="badge flagship">Flagship</span>
+                <div class="batch-start">Batch Starts: 6th December</div>
                 <h2>Pro Builder Program</h2>
                 <p class="subtitle">Main Revenue Driver</p>
                 <div class="price">₹2,999</div>
                 <p class="positioning">"Yeh course ke baad aap aap beginner nahi… builder ban jaoge."</p>
+                <span class="urgency-badge">💎 Best Value</span>
                 <ul class="features">
                     <li><strong>Everything in Beginner</strong></li>
                     <li>Live Masterclasses: 3 days/week (4 weeks)</li>
@@ -712,18 +662,38 @@
                     <li>Personal Mentorship</li>
                     <li>Internship Opportunity</li>
                 </ul>
+                <button class="syllabus-toggle" onclick="toggleSyllabus(this)">
+                    <span>View Syllabus</span>
+                    <span>▼</span>
+                </button>
+                <div class="syllabus-content" style="display: none;">
+                    <ul class="syllabus-list">
+                        <li><strong>Module 1:</strong> Advanced Electronics & PCB Design Basics</li>
+                        <li><strong>Module 2:</strong> Home Automation Architecture (Relays, WiFi)</li>
+                        <li><strong>Module 3:</strong> Computer Vision Basics (OpenCV, Face Detection)</li>
+                        <li><strong>Module 4:</strong> Voice Recognition & Control Systems</li>
+                        <li><strong>Module 5:</strong> Project: WiFi Surveillance Bot with Live Feed</li>
+                        <li><strong>Module 6:</strong> Project: Voice-Controlled Personal Assistant</li>
+                    </ul>
+                </div>
                 <div style="margin-top: auto;">
                     <button id="enroll-pro" class="enroll-btn">Enroll Now</button>
+                    <div class="trust-badges">
+                        <div class="trust-item">🔒 Secure</div>
+                        <div class="trust-item">⭐ 5.0/5</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 4. IRA Full Stack Robotics Engineer -->
             <div class="pricing-card premium">
                 <span class="badge premium">Premium</span>
+                <div class="batch-start">Batch Starts: 6th December</div>
                 <h2>Full Stack Engineer</h2>
                 <p class="subtitle">Premium Pathway</p>
                 <div class="price">₹14,999</div>
                 <p class="positioning">"Industry-ready robotics engineer in 8 weeks."</p>
+                <span class="urgency-badge">🚀 Career Launch</span>
                 <ul class="features">
                     <li><strong>Everything in PRO</strong></li>
                     <li>8 Weeks of Training</li>
@@ -732,8 +702,26 @@
                     <li>Dedicated Project Support</li>
                     <li>Placement Assistance</li>
                 </ul>
+                <button class="syllabus-toggle" onclick="toggleSyllabus(this)">
+                    <span>View Syllabus</span>
+                    <span>▼</span>
+                </button>
+                <div class="syllabus-content" style="display: none;">
+                    <ul class="syllabus-list">
+                        <li><strong>Module 1:</strong> ROS (Robot Operating System) Fundamentals</li>
+                        <li><strong>Module 2:</strong> Linux for Robotics & Navigation Stack</li>
+                        <li><strong>Module 3:</strong> Drone Aerodynamics & Flight Controllers</li>
+                        <li><strong>Module 4:</strong> AI & Machine Learning in Robotics</li>
+                        <li><strong>Module 5:</strong> Industrial Arm Kinematics & Control</li>
+                        <li><strong>Module 6:</strong> Capstone Project: Autonomous Delivery Bot / Drone</li>
+                    </ul>
+                </div>
                 <div style="margin-top: auto;">
                     <button id="enroll-premium" class="enroll-btn">Enroll Now</button>
+                    <div class="trust-badges">
+                        <div class="trust-item">🔒 Secure</div>
+                        <div class="trust-item">⭐ 5.0/5</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -803,6 +791,23 @@
             <p>© 2025 IRA Labs. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleSyllabus(button) {
+            const content = button.nextElementSibling;
+            const arrow = button.querySelector('span:last-child');
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+                button.querySelector('span:first-child').textContent = "Hide Syllabus";
+            } else {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+                button.querySelector('span:first-child').textContent = "View Syllabus";
+            }
+        }
+    </script>
 
     <!-- Customer Details Modal -->
     <div id="customer-modal" class="modal">
