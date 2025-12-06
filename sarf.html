@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Projections & Investment Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .pdf-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px 70px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 30px;
+            background: #065f46;
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .download-btn {
+            background: white;
+            color: #065f46;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #065f46;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #065f46;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #065f46;
+            margin: 35px 0 15px 0;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            color: #334155;
+            margin: 25px 0 12px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin: 12px 0;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: #d1fae5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin: 25px 0;
+            font-weight: 500;
+        }
+        
+        .revenue-stream {
+            background: #f8fafc;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid #64748b;
+            border-radius: 4px;
+        }
+        
+        .primary-revenue {
+            background: #ecfdf5;
+            border-left-color: #10b981;
+        }
+        
+        .calculation-box {
+            background: #fff7ed;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .total-box {
+            background: #dbeafe;
+            border: 3px solid #3b82f6;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .total-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1e40af;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f1f5f9;
+            color: #065f46;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f8fafc;
+        }
+        
+        .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #065f46;
+        }
+        
+        .section-total {
+            background: #e0f2fe;
+            font-weight: bold;
+        }
+        
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+        
+        .key-insight {
+            background: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .investment-breakdown {
+            background: #f0f9ff;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+        
+        strong {
+            color: #065f46;
+        }
+        
+        .roi-box {
+            background: #dcfce7;
+            border: 3px solid #16a34a;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .download-section {
+                display: none;
+            }
+            .pdf-container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-section">
+        <h2 style="color: white; margin-bottom: 15px;">📊 Download Financial Plan as PDF</h2>
+        <p style="margin-bottom: 20px;">Conservative revenue projections and investment breakdown</p>
+        <button class="download-btn" onclick="window.print()">⬇ Download PDF</button>
+        <p style="font-size: 14px; margin-top: 15px; opacity: 0.9;">Use Ctrl+P (Windows) or Cmd+P (Mac), then select "Save as PDF"</p>
+    </div>
+
+    <div class="pdf-container">
+        <div class="header">
+            <h1>Financial Projections & Investment Plan</h1>
+            <p class="subtitle">Syntax Research and Automation Lab<br>Conservative 12-Month Revenue Forecast</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Executive Financial Summary</h3>
+            <p>This document presents realistic, conservative financial projections for Syntax Research and Automation Lab based on ground-level market realities in Punjab. All numbers assume gradual growth, conservative batch sizes, and realistic market penetration. Target monthly revenue of ₹3-5 lakh within 6-8 months, scaling to ₹5-7 lakh by month 12.</p>
+        </div>
+
+        <h2>Revenue Stream Analysis</h2>
+
+        <div class="revenue-stream primary-revenue">
+            <h3>1. Summer Internship Program (Primary Revenue Driver)</h3>
+            <p><strong>Program Duration:</strong> 45-60 days | <strong>Annual Frequency:</strong> 1 major cycle</p>
+            <p><strong>Market Reality:</strong> First year will require significant marketing effort and brand building. Conservative batch sizes assumed.</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Pricing Structure</h4>
+            <ul>
+                <li><strong>Offline Internship:</strong> ₹12,000 - ₹18,000 per student</li>
+                <li><strong>Online Internship:</strong> ₹5,000 - ₹8,000 per student</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #065f46;">Realistic First-Year Batch Sizes</h4>
+            <ul>
+                <li><strong>Offline (Year 1):</strong> 25-35 students</li>
+                <li><strong>Online (Year 1):</strong> 50-80 students</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #065f46;">Revenue Calculations (Conservative)</h4>
+            <div class="calculation-box">
+<strong>Offline Program:</strong>
+30 students × ₹15,000 = ₹4,50,000
+
+<strong>Online Program:</strong>
+60 students × ₹6,000 = ₹3,60,000
+
+<strong>Total Per Cycle:</strong> ₹8,10,000
+<strong>Costs (35-40%):</strong> ₹3,00,000
+<strong>Net Profit:</strong> ₹5,10,000
+            </div>
+
+            <div class="key-insight">
+                <p><strong>Reality Check:</strong> First internship cycle will require heavy marketing and relationship building. Expect 25-30 students in first attempt, growing to 50-70 by second year. This is a one-time annual program, so monthly average matters more than single event.</p>
+            </div>
+
+            <p><strong>Monthly Average (Amortized over 12 months):</strong> ₹40,000 - ₹70,000</p>
+        </div>
+
+        <div class="revenue-stream">
+            <h3>2. Offline Courses & Workshops</h3>
+            <p><strong>Frequency:</strong> 2-3 batches/month | <strong>Reality:</strong> Takes 3-4 months to build consistent flow</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Course Pricing (Market-Tested)</h4>
+            <ul>
+                <li>Weekend Workshop (2 days): ₹999 - ₹1,499</li>
+                <li>Short Course (10 days): ₹2,499 - ₹3,499</li>
+                <li>Monthly Program: ₹3,999 - ₹4,999</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #065f46;">Realistic Monthly Scenario (After Month 4)</h4>
+            <div class="calculation-box">
+<strong>Weekend Workshops:</strong>
+2 batches × 15 students × ₹1,299 = ₹38,970
+
+<strong>Short Courses:</strong>
+1 batch × 20 students × ₹2,999 = ₹59,980
+
+<strong>Monthly Program:</strong>
+1 batch × 12 students × ₹4,499 = ₹53,988
+
+<strong>Monthly Total:</strong> ₹1,52,938
+<strong>After Costs (30%):</strong> ₹1,07,000
+            </div>
+
+            <p><strong>Projected Monthly Revenue:</strong> ₹80,000 - ₹1,20,000 (after stabilization)</p>
+            <p><em>Months 1-3: ₹20,000 - ₹40,000 (building phase)</em></p>
+        </div>
+
+        <div class="revenue-stream">
+            <h3>3. Online Courses (Slow Build, Long-Term Asset)</h3>
+            <p><strong>Reality:</strong> Takes 6-9 months to build traffic and sales. Don't expect immediate returns.</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Course Pricing</h4>
+            <ul>
+                <li>Beginner Course: ₹699 - ₹999</li>
+                <li>Intermediate: ₹1,499 - ₹1,999</li>
+                <li>Complete Bundle: ₹2,999 - ₹3,999</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #065f46;">Realistic Sales Projections</h4>
+            <div class="calculation-box">
+<strong>Months 1-3:</strong> 5-10 sales/month = ₹5,000-10,000
+<strong>Months 4-6:</strong> 20-30 sales/month = ₹20,000-30,000
+<strong>Months 7-12:</strong> 50-80 sales/month = ₹50,000-80,000
+            </div>
+
+            <div class="key-insight">
+                <p><strong>Growth Reality:</strong> Online courses need content marketing, SEO, testimonials. Don't count on this for first 6 months. By month 12, can become steady ₹60-80k/month income.</p>
+            </div>
+
+            <p><strong>Year 1 Average Monthly:</strong> ₹25,000 - ₹40,000</p>
+        </div>
+
+        <div class="revenue-stream">
+            <h3>4. Robotics Kits & Components</h3>
+            <p><strong>Reality:</strong> Steady small revenue, builds gradually with customer base.</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Monthly Sales (Conservative)</h4>
+            <div class="calculation-box">
+<strong>Starter Kits:</strong>
+25 units × ₹250 profit = ₹6,250
+
+<strong>Mid-Range Kits:</strong>
+15 units × ₹450 profit = ₹6,750
+
+<strong>Components & Accessories:</strong>
+Small sales = ₹8,000
+
+<strong>Monthly Total:</strong> ₹21,000
+            </div>
+
+            <p><strong>Projected Monthly Revenue:</strong> ₹18,000 - ₹30,000</p>
+            <p><em>Grows to ₹40,000-50,000 by month 12</em></p>
+        </div>
+
+        <div class="revenue-stream">
+            <h3>5. Schools & Colleges</h3>
+            <p><strong>Reality:</strong> Takes 4-6 months to land first school contract. Requires demos, meetings, proposals.</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Service Pricing</h4>
+            <ul>
+                <li>Single Workshop: ₹8,000 - ₹15,000</li>
+                <li>Lab Setup Consultation: ₹20,000 - ₹35,000</li>
+                <li>Semester Program: ₹40,000 - ₹80,000</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #065f46;">First Year Reality</h4>
+            <div class="calculation-box">
+<strong>Months 1-4:</strong> Building relationships = ₹0-5,000
+<strong>Months 5-8:</strong> 1 workshop/month = ₹10,000-15,000
+<strong>Months 9-12:</strong> 1-2 projects/month = ₹25,000-45,000
+            </div>
+
+            <p><strong>Year 1 Average Monthly:</strong> ₹15,000 - ₹25,000</p>
+        </div>
+
+        <div class="revenue-stream">
+            <h3>6. Custom Projects & R&D</h3>
+            <p><strong>Reality:</strong> Occasional high-value projects. Don't rely on this monthly. When they come, they're big.</p>
+            
+            <h4 style="margin-top: 20px; color: #065f46;">Project Range</h4>
+            <ul>
+                <li>Small Project: ₹15,000 - ₹30,000</li>
+                <li>Medium Project: ₹40,000 - ₹80,000</li>
+                <li>Large Project: ₹1,00,000+ (rare in year 1)</li>
+            </ul>
+
+            <div class="calculation-box">
+<strong>Realistic Year 1:</strong>
+2-3 small projects total = ₹40,000-60,000
+1-2 medium projects = ₹50,000-1,00,000
+<strong>Annual:</strong> ₹90,000 - ₹1,60,000
+<strong>Monthly Average:</strong> ₹7,500 - ₹13,000
+            </div>
+
+            <p><strong>Projected Monthly Average:</strong> ₹10,000 - ₹20,000 (Year 1)</p>
+        </div>
+
+        <h2>Realistic Monthly Revenue Timeline</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Time Period</th>
+                    <th>Revenue Streams Active</th>
+                    <th class="amount">Monthly Revenue (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Months 1-3</strong></td>
+                    <td>Building phase, small workshops</td>
+                    <td class="amount">50,000 - 1,00,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Months 4-6</strong></td>
+                    <td>Regular courses, first school deals</td>
+                    <td class="amount">1,50,000 - 2,50,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Months 7-9</strong></td>
+                    <td>All streams active, internship prep</td>
+                    <td class="amount">2,50,000 - 3,50,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Months 10-12</strong></td>
+                    <td>Internship boost, stabilized operations</td>
+                    <td class="amount">4,00,000 - 6,00,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conservative Annual Summary</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Revenue Stream</th>
+                    <th class="amount">Year 1 Total (₹)</th>
+                    <th class="amount">Monthly Avg (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Summer Internship (1 cycle)</td>
+                    <td class="amount">5,10,000</td>
+                    <td class="amount">42,500</td>
+                </tr>
+                <tr>
+                    <td>Offline Courses</td>
+                    <td class="amount">9,00,000</td>
+                    <td class="amount">75,000</td>
+                </tr>
+                <tr>
+                    <td>Online Courses</td>
+                    <td class="amount">3,60,000</td>
+                    <td class="amount">30,000</td>
+                </tr>
+                <tr>
+                    <td>Kits & Components</td>
+                    <td class="amount">3,00,000</td>
+                    <td class="amount">25,000</td>
+                </tr>
+                <tr>
+                    <td>Schools & Colleges</td>
+                    <td class="amount">2,40,000</td>
+                    <td class="amount">20,000</td>
+                </tr>
+                <tr>
+                    <td>Custom Projects</td>
+                    <td class="amount">1,20,000</td>
+                    <td class="amount">10,000</td>
+                </tr>
+                <tr class="section-total">
+                    <td><strong>TOTAL YEAR 1</strong></td>
+                    <td class="amount"><strong>24,30,000</strong></td>
+                    <td class="amount"><strong>2,02,500</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-box">
+            <h3 style="color: #1e40af; margin-bottom: 10px;">Realistic Monthly Target (Stabilized)</h3>
+            <div class="total-amount">₹3,00,000 - ₹5,00,000</div>
+            <p style="margin-top: 10px; font-size: 15px; color: #475569;"><strong>Timeline:</strong> Months 7-12</p>
+            <p style="margin-top: 5px; font-size: 14px; color: #64748b;">Year 2 target: ₹5-8 lakh/month with established reputation</p>
+        </div>
+
+        <div class="roi-box">
+            <h3 style="margin-bottom: 15px; color: #065f46;">Investment Recovery Analysis</h3>
+            <p><strong>Initial Investment:</strong> ₹7,00,000</p>
+            <p><strong>Year 1 Total Revenue:</strong> ₹24,30,000</p>
+            <p><strong>Estimated Operating Costs (40%):</strong> ₹9,72,000</p>
+            <p><strong>Net Profit (Year 1):</strong> ₹14,58,000</p>
+            <p style="margin-top: 20px;"><strong>Investment Recovery:</strong> 7-9 months</p>
+            <p><strong>Return on Investment (Year 1):</strong> 208%</p>
+            <p style="margin-top: 15px;"><strong>Founder Share (45%):</strong> ₹6,56,100 annual / ₹54,675 monthly average</p>
+        </div>
+
+        <h2>Investment Allocation: ₹7,00,000 Breakdown</h2>
+
+        <div class="investment-breakdown">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Key Items</th>
+                        <th class="amount">Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lab Setup & Tools</strong></td>
+                        <td>Soldering stations, power supplies, multimeters, tools, workbenches, component storage, basic robotics parts</td>
+                        <td class="amount">1,80,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Studio</strong></td>
+                        <td>Camera, mic, lights, tripod, backdrop</td>
+                        <td class="amount">1,20,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Computing</strong></td>
+                        <td>Editing PC/laptop upgrade, monitor, SSD, UPS</td>
+                        <td class="amount">1,00,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Initial Kit Inventory</strong></td>
+                        <td>ESP32, Arduino, sensors, starter kits, packaging</td>
+                        <td class="amount">1,00,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing Launch</strong></td>
+                        <td>Logo, website, social ads, posters, brochures</td>
+                        <td class="amount">50,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Operations Buffer</strong></td>
+                        <td>Interns, part-time editor, travel, contingency</td>
+                        <td class="amount">1,50,000</td>
+                    </tr>
+                    <tr class="section-total">
+                        <td colspan="2"><strong>TOTAL INVESTMENT</strong></td>
+                        <td class="amount"><strong>7,00,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Key Assumptions & Reality Checks</h2>
+        <ul>
+            <li><strong>Marketing takes time:</strong> First 3 months are for building presence, don't expect big revenue</li>
+            <li><strong>Word of mouth is key:</strong> After first successful batches, referrals will drive growth</li>
+            <li><strong>School deals are slow:</strong> Institutional sales need 4-6 months of relationship building</li>
+            <li><strong>Seasonal variations:</strong> Summer (internship) and winter (school projects) are peak months</li>
+            <li><strong>Competition exists:</strong> Pricing needs to be competitive while maintaining quality</li>
+            <li><strong>Batch sizes grow gradually:</strong> Don't expect 50-student batches in month 1</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <div class="roi-box">
+            <p>These projections are grounded in realistic market conditions for Punjab's education technology sector. Year 1 focuses on building reputation, testing pricing, and establishing reliable revenue streams. By month 8-10, the business should achieve ₹3-4 lakh monthly revenue consistently.</p>
+            
+            <p style="margin-top: 20px;">The ₹7 lakh investment is recovered within 7-9 months with conservative assumptions. Year 2 projections (₹5-8 lakh/month) become achievable with established brand recognition and proven track record.</p>
+
+            <p style="margin-top: 20px;"><strong>This is a sustainable growth model, not a get-rich-quick scheme. Success depends on consistent quality, smart marketing, and patience during the first 6 months.</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>Realistic financial projections based on market research</p>
+            <p style="margin-top: 10px;">Syntax Research and Automation Lab | IRA Labs & TechHCad Joint Venture</p>
+            <p style="margin-top: 10px;">Confidential Business Plan | Conservative Estimates</p>
+        </div>
+    </div>
+</body>
+</html>
