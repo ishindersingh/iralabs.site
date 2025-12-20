@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 & 7: Ultimate Pi Setup Guide | IRA Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0033A1;
+            --secondary: #0076FF;
+            --terminal-bg: #1e1e1e;
+            --terminal-text: #33ff33;
+            --bg-light: #f8f9fa;
+            --text-main: #1A1A1A;
+            --border: #E0E0E0;
+            --accent: #FF5722;
+            --success: #00C853;
+            --warning: #FFA726;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background: var(--bg-light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            margin: 0.5rem;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        /* Progress Tracker */
+        .progress-tracker {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        /* Step Cards */
+        .step-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            box-shadow: 0 4px 15px rgba(0,51,161,0.3);
+        }
+        
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0;
+        }
+        
+        /* Terminal */
+        .terminal {
+            background: var(--terminal-bg);
+            color: var(--terminal-text);
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .terminal::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 12px;
+            height: 12px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+        }
+        
+        .terminal-header {
+            padding-left: 70px;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+        }
+        
+        .terminal-command {
+            color: var(--terminal-text);
+        }
+        
+        .terminal-comment {
+            color: #888;
+        }
+        
+        /* Check List */
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .check-list li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .check-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Warning Box */
+        .warning {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-left: 5px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,87,34,0.1);
+        }
+        
+        .warning strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .info-box strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid var(--success);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .success-box strong {
+            color: var(--success);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Code Inline */
+        code {
+            background: #f5f5f5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            color: var(--primary);
+            font-size: 0.9em;
+            border: 1px solid #e0e0e0;
+        }
+        
+        /* GPIO Diagram */
+        .gpio-diagram {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .gpio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .pin-info {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .pin-power { background: linear-gradient(135deg, #ffebee, #ffcdd2); }
+        .pin-ground { background: linear-gradient(135deg, #424242, #616161); color: white; }
+        .pin-gpio { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding: 3rem 5%;
+            background: white;
+            border-top: 1px solid var(--border);
+            color: #777;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .step-card { padding: 1.5rem; }
+            .step-title { font-size: 1.4rem; }
+            .gpio-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .step-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>🤖 Day 6 & 7: Complete Pi Deployment</h1>
+        <p>Master the art of Raspberry Pi setup with zero shortcuts. From flashing to hardware control, this is your complete lab manual.</p>
+        <div>
+            <span class="badge">🔧 Hardware Setup</span>
+            <span class="badge">💻 System Configuration</span>
+            <span class="badge">⚡ GPIO Control</span>
+            <span class="badge">🐍 Python Integration</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <a href="course.html" class="back-link">← Back to Syllabus</a>
+    
+    <div class="progress-tracker">
+        <h3>📊 Your Progress Through This Guide</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p style="margin-top: 1rem; color: #666;">Scroll down to complete all steps</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">1</div>
+            <h2 class="step-title">Flashing the OS</h2>
+        </div>
+        <p>Before your Raspberry Pi can think, it needs an operating system. We're installing <strong>Raspberry Pi OS (64-bit)</strong> onto the MicroSD card.</p>
+        
+        <h3 style="margin-top: 2rem; color: var(--secondary);">📥 What You Need</h3>
+        <ul class="check-list">
+            <li>MicroSD Card (Class 10, minimum 16GB recommended)</li>
+            <li>SD Card Reader</li>
+            <li>PC/Laptop (Windows, Mac, or Linux)</li>
+            <li>Internet connection</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem; color: var(--secondary);">🔧 Step-by-Step Process</h3>
+        <ol style="margin-left: 1.5rem; line-height: 2;">
+            <li><strong>Download Raspberry Pi Imager</strong> from <code>raspberrypi.com/software</code></li>
+            <li>Insert your MicroSD card into the reader</li>
+            <li>Launch Raspberry Pi Imager</li>
+            <li><strong>Choose OS:</strong> Raspberry Pi OS (64-bit) - Recommended</li>
+            <li><strong>Choose Storage:</strong> Select your SD card</li>
+            <li><strong>Click the Gear Icon ⚙️</strong> for Advanced Settings</li>
+        </ol>
+
+        <div class="info-box">
+            <strong>⚙️ Critical Advanced Settings Configuration</strong>
+            <p>This is where most students fail. Configure these settings before writing:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>Hostname:</strong> <code>iralab-robot.local</code></li>
+                <li><strong>Enable SSH:</strong> ✅ Use password authentication</li>
+                <li><strong>Username:</strong> <code>pi</code></li>
+                <li><strong>Password:</strong> <code>raspberry</code> (or your choice)</li>
+                <li><strong>Configure Wireless LAN:</strong> Enter WiFi SSID & Password</li>
+                <li><strong>Wireless LAN Country:</strong> IN (India)</li>
+                <li><strong>Locale Settings:</strong> Asia/Kolkata timezone</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 1.5rem;">Click <strong>WRITE</strong> and wait for the process to complete (5-10 minutes). You'll see a verification step.</p>
+        
+        <div class="success-box">
+            <strong>✅ Success Indicator</strong>
+            <p>When you see "Write Successful," safely eject the SD card.</p>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">2</div>
+            <h2 class="step-title">Initial Boot & Network Discovery</h2>
+        </div>
+        
+        <h3 style="color: var(--secondary);">🔌 Power Up Sequence</h3>
+        <ol style="margin-left: 1.5rem; line-height: 2;">
+            <li>Insert the flashed MicroSD card into the Pi's slot</li>
+            <li>Connect the USB Type-C power supply (5V, 3A minimum)</li>
+            <li>The green LED will blink - this is normal</li>
+            <li><strong>Wait 2 minutes</strong> for first boot (filesystem expansion happens automatically)</li>
+        </ol>
+
+        <h3 style="margin-top: 2rem; color: var(--secondary);">🔍 Finding Your Pi on the Network</h3>
+        <p>You need to discover the Pi's IP address to connect via SSH. Use one of these tools:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+            <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+                <strong>📱 Mobile (Android/iOS)</strong>
+                <p style="margin-top: 0.5rem;">Download <strong>Fing App</strong> from Play Store/App Store. Scan your network and look for "Raspberry Pi Foundation"</p>
+            </div>
+            <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+                <strong>💻 Windows PC</strong>
+                <p style="margin-top: 0.5rem;">Download <strong>Advanced IP Scanner</strong>. Run a scan and find "raspberry" in the manufacturer column</p>
+            </div>
+            <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+                <strong>🍎 Mac/Linux</strong>
+                <p style="margin-top: 0.5rem;">Use Terminal command: <code>arp -a</code> or <code>ping iralab-robot.local</code></p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem; color: var(--secondary);">🔐 SSH Connection</h3>
+        <p>Open your terminal (CMD on Windows, Terminal on Mac/Linux) and connect:</p>
+        
+        <div class="terminal">
+            <div class="terminal-header">user@laptop:~$</div>
+            <div class="terminal-command">ssh pi@192.168.x.x</div>
+            <div class="terminal-comment"># Replace 192.168.x.x with your Pi's actual IP</div>
+        </div>
+
+        <div class="info-box">
+            <strong>🔒 First Connection Notice</strong>
+            <p>You may see: <em>"The authenticity of host can't be established"</em></p>
+            <p>Type <code>yes</code> and press Enter. Then enter your password: <code>raspberry</code></p>
+        </div>
+
+        <div class="success-box">
+            <strong>✅ You're In!</strong>
+            <p>When you see <code>pi@iralab-robot:~ $</code> you've successfully connected.</p>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">3</div>
+            <h2 class="step-title">System Update & Permissions</h2>
+        </div>
+        
+        <p>A fresh OS is often outdated. We need to update system packages and configure proper hardware access permissions.</p>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">📦 Step A: Update System Packages</h3>
+        <div class="terminal">
+            <div class="terminal-header">pi@iralab-robot:~ $</div>
+            <div class="terminal-command">sudo apt update && sudo apt upgrade -y</div>
+            <div class="terminal-comment"># This may take 10-15 minutes. Be patient!</div>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">👥 Step B: Add User to Hardware Groups</h3>
+        <p>Without proper group membership, you'll get "Permission Denied" errors when accessing GPIO pins.</p>
+        <div class="terminal">
+            <div class="terminal-header">pi@iralab-robot:~ $</div>
+            <div class="terminal-command">sudo usermod -a -G gpio,i2c,spi,input pi</div>
+            <div class="terminal-comment"># Adds 'pi' user to all necessary hardware groups</div>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">⚙️ Step C: Enable Hardware Interfaces</h3>
+        <div class="terminal">
+            <div class="terminal-header">pi@iralab-robot:~ $</div>
+            <div class="terminal-command">sudo raspi-config</div>
+        </div>
+
+        <div class="info-box">
+            <strong>📋 Inside raspi-config Menu</strong>
+            <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li>Navigate to <code>3 Interface Options</code></li>
+                <li>Enable the following:
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>I2C</strong> - For sensors (accelerometers, gyroscopes)</li>
+                        <li><strong>SPI</strong> - For displays and high-speed sensors</li>
+                        <li><strong>Serial Port</strong> - For GPS, Bluetooth modules</li>
+                        <li><strong>Camera</strong> - If using Pi Camera module</li>
+                    </ul>
+                </li>
+                <li>Select <code>Finish</code> and choose <code>Yes</code> to reboot</li>
+            </ol>
+        </div>
+
+        <p style="margin-top: 1.5rem;">After reboot, reconnect via SSH using the same command as before.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">4</div>
+            <h2 class="step-title">Understanding GPIO Layout</h2>
+        </div>
+        
+        <p>The Raspberry Pi has 40 pins. Not all are the same! Understanding this layout is critical for every circuit you build.</p>
+
+        <div class="gpio-diagram">
+            <h3 style="color: var(--primary);">📌 40-Pin GPIO Header Reference</h3>
+            <div class="gpio-grid">
+                <div class="pin-power">🔴 5V Power (Pins 2, 4)</div>
+                <div class="pin-power">🟠 3.3V Power (Pins 1, 17)</div>
+                <div class="pin-ground">⚫ Ground (Pins 6, 9, 14, 20, 25, 30, 34, 39)</div>
+                <div class="pin-gpio">🔵 GPIO Pins (0-27)</div>
+            </div>
+            <p style="margin-top: 1.5rem; color: #666;">View full pinout at <code>pinout.xyz</code> or run <code>pinout</code> in terminal</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ CRITICAL HARDWARE RULE</strong>
+            <p><strong>NEVER connect or disconnect wires while the Pi is powered ON!</strong></p>
+            <p>A single loose 5V wire touching a GPIO pin will permanently destroy the CPU. Always:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Power OFF before wiring</li>
+                <li>Double-check connections</li>
+                <li>Use a multimeter to verify voltage levels</li>
+                <li>Keep wires organized and secured</li>
+            </ul>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">🔌 Common Pin Uses</h3>
+        <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+            <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
+                <strong>GPIO 18 (Pin 12):</strong> PWM capable - perfect for LED dimming, servo control
+            </div>
+            <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
+                <strong>GPIO 2 & 3 (Pins 3, 5):</strong> I2C interface (SDA & SCL) - for sensor communication
+            </div>
+            <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
+                <strong>GPIO 14 & 15 (Pins 8, 10):</strong> UART TX/RX - for serial communication
+            </div>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">5</div>
+            <h2 class="step-title">Python Environment Setup</h2>
+        </div>
+        
+        <p>Modern Raspberry Pi OS (Bookworm) requires a <strong>virtual environment</strong> to install Python libraries. This prevents system conflicts.</p>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">📁 Create Project Workspace</h3>
+        <div class="terminal">
+            <div class="terminal-header">pi@iralab-robot:~ $</div>
+            <div class="terminal-command">mkdir ~/robot_ws && cd ~/robot_ws</div>
+            <div class="terminal-comment"># Creates a dedicated robotics workspace</div>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">🐍 Setup Virtual Environment</h3>
+        <div class="terminal">
+            <div class="terminal-header">pi@iralab-robot:~/robot_ws $</div>
+            <div class="terminal-command">python -m venv env</div>
+            <div class="terminal-comment"># Creates isolated Python environment<br/><br/></div>
+            <div class="terminal-command">source env/bin/activate</div>
+            <div class="terminal-comment"># Activates the environment (notice prompt changes to (env))</div>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">📚 Install Robotics Libraries</h3>
+        <div class="terminal">
+            <div class="terminal-header">(env) pi@iralab-robot:~/robot_ws $</div>
+            <div class="terminal-command">pip install RPi.GPIO spidev smbus2</div>
+            <div class="terminal-comment"># Core libraries for hardware control</div>
+        </div>
+
+        <div class="info-box">
+            <strong>📦 Library Breakdown</strong>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><code>RPi.GPIO</code> - Control GPIO pins, read sensors, drive motors</li>
+                <li><code>spidev</code> - SPI communication for displays and high-speed devices</li>
+                <li><code>smbus2</code> - I2C communication for sensors (IMU, temperature, etc.)</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 1.5rem;"><strong>Pro Tip:</strong> Always activate your environment before working: <code>source ~/robot_ws/env/bin/activate</code></p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-header">
+            <div class="step-number">6</div>
+            <h2 class="step-title">The "Alive" Test - LED Blink</h2>
+        </div>
+        
+        <p>Time to bring your Pi to life! This test verifies your permissions, wiring, and Python setup.</p>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">🔌 Hardware Setup</h3>
+        <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong>Wiring Instructions:</strong>
+            <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Power OFF the Pi</li>
+                <li>Connect LED positive leg (longer) to GPIO 18 (Pin 12)</li>
+                <li>Connect 220Ω resistor to LED negative leg</li>
+                <li>Connect resistor other end to Ground (Pin 6)</li>
+                <li>Double-check all connections</li>
+                <li>Power ON the Pi</li>
+            </ol>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">💻 Create Your First Script</h3>
+        <div class="terminal">
+            <div class="terminal-header">(env) pi@iralab-robot:~/robot_ws $</div>
+            <div class="terminal-command">nano blink.py</div>
+        </div>
+
+        <p style="margin-top: 1rem;">Paste this code into the nano editor:</p>
+        <div class="terminal" style="color: #66d9ef;">
+import RPi.GPIO as GPIO<br/>
+import time<br/><br/>
+
+LED_PIN = 18<br/>
+GPIO.setmode(GPIO.BCM)  <span class="terminal-comment"># Use BCM pin numbering</span><br/>
+GPIO.setup(LED_PIN, GPIO.OUT)<br/><br/>
+
+print("🤖 System Online. Blinking LED on Pin 18...")<br/>
+try:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;while True:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPIO.output(LED_PIN, True)  <span class="terminal-comment"># LED ON</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(0.5)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPIO.output(LED_PIN, False)  <span class="terminal-comment"># LED OFF</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(0.5)<br/>
+except KeyboardInterrupt:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;GPIO.cleanup()  <span class="terminal-comment"># Clean exit - ALWAYS do this!</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;print("\n✅ Clean Exit Successful")
+        </div>
+
+        <p style="margin-top: 1rem;">Save and exit: Press <code>Ctrl + X</code>, then <code>Y</code>, then <code>Enter</code></p>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">▶️ Run Your First Hardware Script</h3>
+        <div class="terminal">
+            <div class="terminal-header">(env) pi@iralab-robot:~/robot_ws $</div>
+            <div class="terminal-command">python blink.py</div>
+        </div>
+
+        <div class="success-box">
+            <strong>✅ Success!</strong>
+            <p>Your LED should be blinking every 0.5 seconds. Press <code>Ctrl + C</code> to stop the program gracefully.</p>
+        </div>
+
+        <h3 style="color: var(--secondary); margin-top: 2rem;">🎓 What You Just Learned</h3>
+        <ul style="margin-left: 1.5rem; line-height: 2;">
+            <li><strong>GPIO.setmode(GPIO.BCM)</strong> - Use Broadcom pin numbering (not physical pin numbers)</li>
+            <li><strong>GPIO.setup()</strong> - Configure pin as input or output</li>
+            <li><strong>GPIO.output()</strong> - Set pin HIGH (3.3V) or LOW (0V)</li>
+            <li><strong>GPIO.cleanup()</strong> - Reset all pins to safe state (prevents hardware damage)</li>
+            <li><strong>try/except KeyboardInterrupt</strong> - Handle Ctrl+C gracefully</li>
+        </ul>
+    </div>
+
+    <div class="step-card" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid var(--warning);">
+        <div class="step-header">
+            <div class="step-number" style="background: var(--warning);">🔧</div>
+            <h2 class="step-title" style="color: var(--warning);">Troubleshooting Common Issues</h2>
+        </div>
+
+        <h3 style="color: var(--warning); margin-top: 1.5rem;">❌ Problem: "Permission Denied" Error</h3>
+        <p><strong>Solution:</strong> Your user isn't in the GPIO group yet. Run these commands:</p>
+        <div class="terminal">
+            <div class="terminal-command">sudo chown root.gpio /dev/gpiomem</div>
+            <div class="terminal-command">sudo chmod g+rw /dev/gpiomem</div>
+            <div class="terminal-comment"># Then logout and login again, or reboot</div>
+        </div>
+
+        <h3 style="color: var(--warning); margin-top: 2rem;">❌ Problem: LED Not Blinking</h3>
+        <p><strong>Check These:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+            <li>Is the LED connected in the correct polarity? (Long leg to GPIO)</li>
+            <li>Is the resistor connected? (Without it, LED may burn out)</li>
+            <li>Did you use the correct pin? (GPIO 18 is Physical Pin 12)</li>
+            <li>Run <code>pinout</code> command to verify pin layout</li>
+        </ul>
+
+        <h3 style="color: var(--warning); margin-top: 2rem;">❌ Problem: "No module named RPi.GPIO"</h3>
+        <p><strong>Solution:</strong> You forgot to activate your virtual environment!</p>
+        <div class="terminal">
+            <div class="terminal-command">source ~/robot_ws/env/bin/activate</div>
+            <div class="terminal-comment"># Your prompt should now show (env) prefix</div>
+        </div>
+
+        <h3 style="color: var(--warning); margin-top: 2rem;">❌ Problem: Can't SSH to Pi</h3>
+        <p><strong>Troubleshooting Steps:</strong></p>
+        <ol style="margin-left: 1.5rem;">
+            <li>Verify Pi and laptop are on the same WiFi network</li>
+            <li>Check if green LED is blinking (indicates boot activity)</li>
+            <li>Try hostname: <code>ssh pi@iralab-robot.local</code></li>
+            <li>Re-flash SD card with SSH enabled in advanced settings</li>
+            <li>Connect monitor + keyboard directly to Pi as last resort</li>
+        </ol>
+    </div>
+
+    <div class="step-card" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;">
+        <h2 style="color: white; margin-bottom: 1.5rem;">🎯 Next Steps: Level Up Your Skills</h2>
+        
+        <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem;">
+            <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                <strong style="font-size: 1.2rem;">📚 Day 8: Sensors & I2C</strong>
+                <p style="margin-top: 0.5rem; opacity: 0.95;">Learn to read temperature, motion, and distance sensors using I2C protocol</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                <strong style="font-size: 1.2rem;">🤖 Day 9: Motor Control</strong>
+                <p style="margin-top: 0.5rem; opacity: 0.95;">Control DC motors, servos, and stepper motors for robot movement</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                <strong style="font-size: 1.2rem;">📷 Day 10: Computer Vision</strong>
+                <p style="margin-top: 0.5rem; opacity: 0.95;">Integrate Pi Camera and OpenCV for object detection and tracking</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-card">
+        <h2 style="color: var(--primary); margin-bottom: 1.5rem;">📖 Quick Reference Cheat Sheet</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div>
+                <h3 style="color: var(--secondary);">Essential Commands</h3>
+                <div class="terminal" style="font-size: 0.85rem;">
+<span class="terminal-comment"># System Updates</span><br/>
+sudo apt update<br/>
+sudo apt upgrade -y<br/><br/>
+
+<span class="terminal-comment"># Activate Virtual Env</span><br/>
+source ~/robot_ws/env/bin/activate<br/><br/>
+
+<span class="terminal-comment"># View GPIO Layout</span><br/>
+pinout<br/><br/>
+
+<span class="terminal-comment"># Check I2C Devices</span><br/>
+i2cdetect -y 1<br/><br/>
+
+<span class="terminal-comment"># System Reboot</span><br/>
+sudo reboot
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: var(--secondary);">GPIO Pin Modes</h3>
+                <div class="terminal" style="font-size: 0.85rem; color: #66d9ef;">
+<span class="terminal-comment"># BCM Mode (recommended)</span><br/>
+GPIO.setmode(GPIO.BCM)<br/>
+GPIO.setup(18, GPIO.OUT)<br/><br/>
+
+<span class="terminal-comment"># BOARD Mode (physical pins)</span><br/>
+GPIO.setmode(GPIO.BOARD)<br/>
+GPIO.setup(12, GPIO.OUT)<br/><br/>
+
+<span class="terminal-comment"># Input with Pull-up</span><br/>
+GPIO.setup(23, GPIO.IN,<br/>
+&nbsp;&nbsp;pull_up_down=GPIO.PUD_UP)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box" style="text-align: center; padding: 2rem;">
+        <h3 style="color: var(--secondary); margin-bottom: 1rem;">💡 Pro Tips for Success</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; margin-top: 1.5rem;">
+            <div>
+                <strong>🔋 Power Supply Matters</strong>
+                <p style="margin-top: 0.5rem;">Always use a quality 5V 3A adapter. Cheap chargers cause random reboots and GPIO errors.</p>
+            </div>
+            <div>
+                <strong>📸 Take Photos of Wiring</strong>
+                <p style="margin-top: 0.5rem;">Before troubleshooting, photograph your circuit. You'll thank yourself later.</p>
+            </div>
+            <div>
+                <strong>🧪 Test Incrementally</strong>
+                <p style="margin-top: 0.5rem;">Add one component at a time. Debug small, build big.</p>
+            </div>
+            <div>
+                <strong>📝 Document Everything</strong>
+                <p style="margin-top: 0.5rem;">Keep a lab notebook. Future you will appreciate the notes.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">🎓 IRA Labs | Robotics Engineering</h3>
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">Build. Test. Deploy. Repeat.</p>
+        <p style="color: #999;">This is your dedicated student portal. Questions? Reach out during lab hours.</p>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <span style="margin: 0 1rem;">📧 support@iralabs.edu</span>
+            <span style="margin: 0 1rem;">🌐 iralabs.edu</span>
+            <span style="margin: 0 1rem;">📞 Lab Extension: 4242</span>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Smooth Progress Bar Animation
+    window.addEventListener('scroll', () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = window.scrollY;
+        const progress = (scrolled / documentHeight) * 100;
+        document.getElementById('progressBar').style.width = progress + '%';
+    });
+
+    // Smooth Scroll for Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Step Card Animation on Scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.step-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(card);
+    });
+</script>
+
+</body>
+</html>
