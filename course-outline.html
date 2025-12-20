@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Outline | IRA Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0033A1;
+            --secondary: #0076FF;
+            --bg-light: #FFFFFF;
+            --bg-off: #F5F7FA;
+            --text-main: #1A1A1A;
+            --text-sub: #555555;
+            --border: #E0E0E0;
+        }
+
+        html.dark-mode {
+            --primary: #3B82F6;
+            --bg-light: #0F1419;
+            --bg-off: #161B22;
+            --text-main: #F3F4F6;
+            --text-sub: #9CA3AF;
+            --border: #2F3336;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 5%; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; }
+
+        .header { text-align: center; margin-bottom: 4rem; }
+        .header h1 { font-size: 3rem; color: var(--primary); }
+
+        /* Day Card Styling */
+        .day-card {
+            background: var(--bg-off);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .day-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 118, 255, 0.1);
+        }
+
+        .day-label {
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .day-title { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary); }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item h4 { margin-bottom: 0.5rem; color: var(--secondary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .detail-item ul { list-style: none; padding: 0; }
+        .detail-item ul li { margin-bottom: 0.4rem; font-size: 0.95rem; color: var(--text-sub); display: flex; align-items: flex-start; gap: 8px; }
+        .detail-item ul li::before { content: "•"; color: var(--secondary); font-weight: bold; }
+
+        .learn-more-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .learn-more-btn:hover { background: var(--primary); color: white; }
+
+        @media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <a href="index.html" style="text-decoration: none; color: var(--secondary); font-weight: bold;">← Return Home</a>
+            <h1>Full Course Syllabus</h1>
+            <p>15 Days of Intensive Robotics, Coding & Automation</p>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 01</span>
+            <h3 class="day-title">The Robotics Blueprint & Tools</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Core Theory</h4>
+                    <ul>
+                        <li>Brief History: From Unimate to Tesla Bot</li>
+                        <li>Anatomy of a Robot: Sensors, Actuators, Controllers</li>
+                        <li>Degrees of Freedom (DoF) explained</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Lab Workshop</h4>
+                    <ul>
+                        <li>Multimeter: Voltage, Current & Continuity testing</li>
+                        <li>Safety Protocols: Preventing short circuits</li>
+                        <li>Component Identification: Resistors, Caps, Transistors</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day1.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 02</span>
+            <h3 class="day-title">Software & Dev Environments</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Environment Setup</h4>
+                    <ul>
+                        <li>Installing VS Code, Python 3.10+ & Git</li>
+                        <li>Package Managers: Introduction to PIP and NPM</li>
+                        <li>Compiler vs Interpreter vs JIT</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Coding Basics</h4>
+                    <ul>
+                        <li>The Command Line Interface (CLI) fundamentals</li>
+                        <li>Setting up Virtual Environments</li>
+                        <li>Hello World: Python vs C++ execution flow</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day2.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 03</span>
+            <h3 class="day-title">Robotics Industry & Career Facts</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Market Insights</h4>
+                    <ul>
+                        <li>Industry 4.0 & IIoT (Industrial IoT)</li>
+                        <li>Case Studies: Amazon Robotics & Boston Dynamics</li>
+                        <li>How to build a Robotics Portfolio</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Technical Ethics</h4>
+                    <ul>
+                        <li>AI in Robotics: Ethical considerations</li>
+                        <li>Future Trends: Swarm Robotics & Bio-mimicry</li>
+                        <li>Salary Benchmarks & Internship Roles</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day3.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 04 & 05</span>
+            <h3 class="day-title">Python Logic for Automation</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Advanced Programming</h4>
+                    <ul>
+                        <li>Data Structures: Lists, Dictionaries & Tuples</li>
+                        <li>Control Flow: Complex nested loops and logic</li>
+                        <li>File I/O: Reading/Writing sensor logs</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Hardware Link</h4>
+                    <ul>
+                        <li>Object Oriented Programming (OOP) for Robots</li>
+                        <li>`Pyserial`: Communicating with hardware via Python</li>
+                        <li>Threading: Handling multiple sensors simultaneously</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day4.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 06 & 07</span>
+            <h3 class="day-title">Linux Brain & Raspberry Pi</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>OS Mastery</h4>
+                    <ul>
+                        <li>SSH: Remote controlling your robot's brain</li>
+                        <li>User Groups, Permissions & Security</li>
+                        <li>Cron Jobs: Scheduling automated tasks</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Pi Hardware</h4>
+                    <ul>
+                        <li>GPIO Control with Python (`RPi.GPIO`)</li>
+                        <li>Interfacing Cameras (PiCam)</li>
+                        <li>Power Management for Mobile Robots</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day6.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 08 - 10</span>
+            <h3 class="day-title">Embedded Systems, Motors & Drivers</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Arduino & C++</h4>
+                    <ul>
+                        <li>Writing high-speed Real-Time code</li>
+                        <li>Analog-to-Digital Conversion (ADC)</li>
+                        <li>Interrupts: Handling emergency stops</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Actuation</h4>
+                    <ul>
+                        <li>PWM: Speed and Angle control</li>
+                        <li>H-Bridge Logic: Bidirectional motor control</li>
+                        <li>Servo vs Stepper: When to use which?</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day8.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 11 - 13</span>
+            <h3 class="day-title">ROS, PID & Inverse Kinematics</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Intelligence</h4>
+                    <ul>
+                        <li>ROS Noetic/Foxy: Workspace & Package creation</li>
+                        <li>PID: Proportional-Integral-Derivative tuning</li>
+                        <li>Sensor Fusion: Combining IR and Ultrasonic</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Kinematics</h4>
+                    <ul>
+                        <li>The Math: Sine/Cosine for joint movement</li>
+                        <li>IK Solvers: Predicting arm positions</li>
+                        <li>Mapping: Basic SLAM concepts</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day11.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="day-card">
+            <span class="day-label">Day 14 & 15</span>
+            <h3 class="day-title">3D Modeling, OCS & Graduation</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Mechanical Design</h4>
+                    <ul>
+                        <li>Introduction to Fusion 360 / Tinkercad</li>
+                        <li>Designing Chassis for 3D Printing</li>
+                        <li>Tolerances & Moving parts</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h4>Final Project</h4>
+                    <ul>
+                        <li>Optical Control Systems (OCS) implementation</li>
+                        <li>Full System Integration & Debugging</li>
+                        <li>Demo Day & Certification</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="day14.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Apply dark mode if it was set on the main page
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
