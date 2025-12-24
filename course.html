@@ -604,6 +604,54 @@
             left: 0;
             font-size: 0.8rem;
         }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 65px;
+            left: 0;
+            width: 100%;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            z-index: 999;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        html.dark-mode .mobile-menu {
+            background: var(--bg-dark);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 
@@ -636,8 +684,18 @@
                 <li><a href="kit.html">Kit</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+        <a href="Roadmap.html" onclick="toggleMobileMenu()">Roadmap</a>
+        <a href="kit.html" onclick="toggleMobileMenu()">Kit</a>
+        <a href="#" onclick="window.open('https://forms.gle/6p93LXFQguNZxXGVA', '_blank'); toggleMobileMenu()"
+            class="enroll-btn" style="text-align: center;">Enroll Now</a>
+    </div>
 
     <main class="main-container">
         <header class="course-hero">
@@ -677,7 +735,8 @@
                 </div>
                 <div style="margin-top: auto;">
                     <p class="made-for"><strong>Made For:</strong> School students (8-12), Beginners</p>
-                    <button id="enroll-starter" class="enroll-btn">Enroll Now</button>
+                    <button id="enroll-starter" class="enroll-btn"
+                        onclick="window.open('https://forms.gle/6p93LXFQguNZxXGVA', '_blank')">Enroll Now</button>
                     <div class="trust-badges">
                         <div class="trust-item">🔒 Secure</div>
                         <div class="trust-item">⭐ 4.8/5</div>
@@ -730,7 +789,8 @@
                     </ul>
                 </div>
                 <div style="margin-top: auto;">
-                    <button id="enroll-beginner" class="enroll-btn">Enroll Now</button>
+                    <button id="enroll-beginner" class="enroll-btn"
+                        onclick="window.open('https://forms.gle/6p93LXFQguNZxXGVA', '_blank')">Enroll Now</button>
                     <div class="trust-badges">
                         <div class="trust-item">🔒 Secure</div>
                         <div class="trust-item">⭐ 4.9/5</div>
@@ -786,7 +846,8 @@
                     </ul>
                 </div>
                 <div style="margin-top: auto;">
-                    <button id="enroll-pro" class="enroll-btn">Enroll Now</button>
+                    <button id="enroll-pro" class="enroll-btn"
+                        onclick="window.open('https://forms.gle/6p93LXFQguNZxXGVA', '_blank')">Enroll Now</button>
                     <div class="trust-badges">
                         <div class="trust-item">🔒 Secure</div>
                         <div class="trust-item">⭐ 5.0/5</div>
@@ -826,7 +887,8 @@
                     </ul>
                 </div>
                 <div style="margin-top: auto;">
-                    <button id="enroll-premium" class="enroll-btn">Enroll Now</button>
+                    <button id="enroll-premium" class="enroll-btn"
+                        onclick="window.open('https://forms.gle/6p93LXFQguNZxXGVA', '_blank')">Enroll Now</button>
                     <div class="trust-badges">
                         <div class="trust-item">🔒 Secure</div>
                         <div class="trust-item">⭐ 5.0/5</div>
@@ -1161,7 +1223,7 @@
             }
         };
 
-        // 1. Starter Kit
+        /* 1. Starter Kit
         document.getElementById('enroll-starter').onclick = function (e) {
             e.preventDefault();
             openModal({
@@ -1199,7 +1261,15 @@
                 description: "Full Stack Robotics Engineer",
                 notes: { product: "Full Stack Engineer" }
             });
-        };
+        }; */
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            btn.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
+        }
     </script>
 </body>
 
