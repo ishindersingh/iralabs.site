@@ -1,0 +1,137 @@
+/* Motivational Banners & Conversion Optimization */
+
+/* Motivational Banner */
+.motivation-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 12px 5%;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    z-index: 10001;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 65px;
+}
+
+.motivation-banner span {
+    animation: pulse-text 2s infinite;
+    display: inline-block;
+}
+
+@keyframes pulse-text {
+    0% {
+        opacity: 0.95;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 0.95;
+        transform: scale(1);
+    }
+}
+
+/* FOMO Alert Banner */
+.fomo-alert {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+    color: white;
+    text-align: center;
+    padding: 10px 5%;
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-bottom: 3px solid #c92a2a;
+    animation: urgency-pulse 2s infinite;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes urgency-pulse {
+
+    0%,
+    100% {
+        background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+    }
+
+    50% {
+        background: linear-gradient(90deg, #ee5a6f, #ff6b6b);
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .motivation-banner {
+        font-size: 0.85rem;
+        padding: 10px 4%;
+        margin-top: 60px;
+    }
+
+    .fomo-alert {
+        font-size: 0.8rem;
+        padding: 8px 4%;
+    }
+
+    .motivation-banner span {
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .motivation-banner {
+        font-size: 0.75rem;
+        padding: 8px 3%;
+    }
+
+    .fomo-alert {
+        font-size: 0.7rem;
+        padding: 7px 3%;
+    }
+}
+
+/* Enhanced CTA Styling */
+.enroll-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.enroll-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.enroll-btn:hover::before {
+    left: 100%;
+}
+
+.enroll-btn:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Urgency Badge Enhancement */
+.urgency-badge {
+    animation: badge-pulse 1.5s infinite;
+}
+
+@keyframes badge-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
