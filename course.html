@@ -422,10 +422,6 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
         .footer-divider {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 2rem;
@@ -436,7 +432,16 @@
         /* Responsive */
         @media (max-width: 992px) {
             .pricing-section {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: 1fr;
+            }
+
+            .course-hero {
+                margin-top: 80px;
+                padding: 2rem 0;
+            }
+
+            .course-hero h1 {
+                font-size: 2.2rem;
             }
         }
 
@@ -445,16 +450,65 @@
                 display: none;
             }
 
+            nav {
+                padding: 0.8rem 4%;
+                height: 60px;
+            }
+
+            .course-hero {
+                margin-top: 140px;
+                padding: 1.5rem 0;
+            }
+
             .course-hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            footer {
+                padding: 2.5rem 4%;
+            }
+
+            .motivation-banner,
+            .fomo-alert {
+                font-size: 0.85rem;
+                padding: 8px 4%;
+            }
+
+            .main-container {
+                padding: 0 4%;
             }
         }
 
-        /* New Styles for Conversion & Info */
+        @media (max-width: 480px) {
+            .course-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-hero {
+                margin-top: 130px;
+            }
+
+            .motivation-banner,
+            .fomo-alert {
+                font-size: 0.75rem;
+                padding: 6px 3%;
+            }
+
+            .price {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* New Styles for Conversion */
         .batch-start {
             background: rgba(0, 51, 161, 0.1);
             color: var(--primary);
@@ -549,7 +603,7 @@
 
         /* Kit Styles */
         .kit-highlight {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
             color: #d32f2f;
             padding: 0.8rem;
             border-radius: 8px;
@@ -557,22 +611,6 @@
             text-align: center;
             margin-bottom: 1rem;
             border: 1px solid #ffcdd2;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.02);
-            }
-
-            100% {
-                transform: scale(1);
-            }
         }
 
         .kit-content {
@@ -656,25 +694,13 @@
 </head>
 
 <body>
-    <div class="christmas-banner">
-        <span>🎄 New Year Special: Start 2025 with a New Skill! Limited Seats for Jan 1st Batch! ❄️</span>
+    <div class="motivation-banner">
+        <span>🚀 Transform Your Future: Start Learning Robotics Today! Limited Seats Available!</span>
     </div>
     <div class="fomo-alert">
-        ⚠️ 85% of seats filled! Prices hike by 20% after Jan 1st. Don't wait!
+        ⚡ Only 15 seats left! Join 500+ students who've already enrolled. Don't miss out!
     </div>
-    <div class="snow-container">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-    </div>
+
     <nav>
         <div class="logo" onclick="window.location.href='index.html'">IRA <span>Labs</span></div>
         <div class="nav-right">
@@ -805,7 +831,7 @@
                 <h2>Pro Builder Program</h2>
                 <p class="subtitle">Main Revenue Driver</p>
                 <div class="price">₹2,999</div>
-                <p class="positioning">"Yeh course ke baad aap aap beginner nahi… builder ban jaoge."</p>
+                <p class="positioning">"Yeh course ke baad aap beginner nahi… builder ban jaoge."</p>
                 <span class="urgency-badge">💎 Best Value</span>
                 <div class="kit-highlight">🎁 FREE Robotics Kit (Worth ₹1500)</div>
                 <button class="syllabus-toggle" onclick="toggleKit(this)"
@@ -1222,46 +1248,6 @@
                 modal.style.display = "none";
             }
         };
-
-        /* 1. Starter Kit
-        document.getElementById('enroll-starter').onclick = function (e) {
-            e.preventDefault();
-            openModal({
-                amount: "39900",
-                description: "Starter Kit - Robotics",
-                notes: { product: "Starter Kit" }
-            });
-        };
-
-        // 2. Beginner Accelerator
-        document.getElementById('enroll-beginner').onclick = function (e) {
-            e.preventDefault();
-            openModal({
-                amount: "89900",
-                description: "Beginner Accelerator - Robotics",
-                notes: { product: "Beginner Accelerator" }
-            });
-        };
-
-        // 3. Pro Builder Program
-        document.getElementById('enroll-pro').onclick = function (e) {
-            e.preventDefault();
-            openModal({
-                amount: "299900",
-                description: "Pro Builder Program - Robotics",
-                notes: { product: "Pro Builder Program" }
-            });
-        };
-
-        // 4. Full Stack Engineer
-        document.getElementById('enroll-premium').onclick = function (e) {
-            e.preventDefault();
-            openModal({
-                amount: "1499900",
-                description: "Full Stack Robotics Engineer",
-                notes: { product: "Full Stack Engineer" }
-            });
-        }; */
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
