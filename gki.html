@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership Agreement - Roles & Responsibilities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Calibri', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .document-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 25px;
+            background: #2563eb;
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .download-btn {
+            background: white;
+            color: #2563eb;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 8px;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: #2563eb;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #334155;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin: 10px 0;
+        }
+        
+        .equity-box {
+            background: #dbeafe;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .name-voting-section {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .name-option {
+            background: white;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .vote-box {
+            width: 80px;
+            height: 30px;
+            border: 2px solid #2563eb;
+            border-radius: 4px;
+            text-align: center;
+            background: #eff6ff;
+        }
+        
+        .partner-section {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .editable-area {
+            background: white;
+            border: 2px dashed #94a3b8;
+            padding: 15px;
+            margin: 10px 0;
+            min-height: 150px;
+            border-radius: 4px;
+        }
+        
+        ul {
+            margin: 10px 0 10px 25px;
+        }
+        
+        li {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+        
+        .instruction {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #991b1b;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #2563eb;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .signature-box {
+            display: inline-block;
+            width: 30%;
+            margin: 20px 1.5%;
+            text-align: center;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #1a1a1a;
+            margin: 10px 0;
+            height: 50px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .download-section {
+                display: none;
+            }
+            .document-container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-section">
+        <h2 style="color: white; margin-bottom: 15px;">📄 Partnership Agreement Document</h2>
+        <p style="margin-bottom: 15px;">Edit roles and vote for company name</p>
+        <button class="download-btn" onclick="window.print()">⬇ Download as PDF</button>
+        <p style="font-size: 13px; margin-top: 12px; opacity: 0.9;">Use Ctrl+P (Windows) or Cmd+P (Mac), then select "Save as PDF"</p>
+    </div>
+
+    <div class="document-container">
+        <div class="header">
+            <h1>Partnership Agreement</h1>
+            <p class="subtitle">Roles, Responsibilities & Equity Distribution</p>
+            <p style="margin-top: 15px; color: #64748b; font-size: 13px;">Date: January 10, 2026</p>
+        </div>
+
+        <h2>1. Partners and Equity Distribution</h2>
+        <div class="equity-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partner Name</th>
+                        <th>Equity Share</th>
+                        <th>Primary Focus Area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gourav Gupta</strong></td>
+                        <td><strong>33.33%</strong></td>
+                        <td>Business Development & Investment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kanwarpreet Singh</strong></td>
+                        <td><strong>33.33%</strong></td>
+                        <td>Academic Operations & Curriculum</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ishinder Singh</strong></td>
+                        <td><strong>33.33%</strong></td>
+                        <td>Sales, Marketing & R&D</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>2. Company Name - Voting Section</h2>
+        <div class="instruction">
+            <strong>INSTRUCTION:</strong> Each partner should mark their top 3 choices with numbers (1 = First choice, 2 = Second choice, 3 = Third choice) in the vote boxes. The name with the highest score wins.
+        </div>
+
+        <div class="name-voting-section">
+            <h3>Proposed Names for EdTech/Academy:</h3>
+            
+            <div class="name-option">
+                <span><strong>AI Robotics Academy</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>NextGen AI Robotics Academy</strong> (Short: NARS)</span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>NextGen AI Robotics School</strong> (Short: NARS)</span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Createch AI Robotics Academy</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>ThinkBot Robotics Lab</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>RoboMinds AI Academy</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>InnoBot AI Academy</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Advanced AI & Robotics Institute</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Applied AI Robotics Academy</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Quantum AI & Robotics Institute</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+        </div>
+
+        <div class="name-voting-section" style="background: #fef3c7; border-color: #f59e0b;">
+            <h3>Proposed Names for Research Lab:</h3>
+            
+            <div class="name-option">
+                <span><strong>NARS Lab</strong> (NextGen AI & Robotics Systems Lab)</span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>X AI & Robotics Lab</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Centre for AI, Robotics & Automation</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+
+            <div class="name-option">
+                <span><strong>Applied AI Robotics Centre</strong></span>
+                <div class="vote-box" contenteditable="true"></div>
+            </div>
+        </div>
+
+        <h2>3. Roles and Responsibilities (March 2026 Focus)</h2>
+
+        <div class="partner-section">
+            <h3>Partner 1: Gourav Gupta</h3>
+            <p><strong>Primary Role:</strong> Business Development, Investment & Infrastructure</p>
+            
+            <p style="margin-top: 15px;"><strong>Pre-Filled Responsibilities (Editable):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <ul>
+                    <li>Provide initial capital investment and infrastructure setup from existing ventures</li>
+                    <li>Secure office/lab space and arrange necessary facilities</li>
+                    <li>Manage financial planning, budgeting, and cash flow</li>
+                    <li>Establish banking relationships and handle legal compliance</li>
+                    <li>Oversee procurement of equipment, tools, and inventory</li>
+                    <li>Develop strategic partnerships with institutions and corporate clients</li>
+                    <li>Lead business development and institutional sales initiatives</li>
+                    <li>Monitor overall business operations and financial performance</li>
+                    <li>Coordinate between all partners and ensure alignment on strategic decisions</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Additional Responsibilities (Edit/Add as needed):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <p style="color: #64748b; font-style: italic;">Add any additional responsibilities here...</p>
+            </div>
+        </div>
+
+        <div class="partner-section" style="background: #e0f2fe; border-color: #0284c7;">
+            <h3>Partner 2: Kanwarpreet Singh</h3>
+            <p><strong>Primary Role:</strong> Academic Operations & Curriculum Development</p>
+            
+            <p style="margin-top: 15px;"><strong>Pre-Filled Responsibilities (Editable):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <ul>
+                    <li>Draft and continuously update AI & Robotics curriculum for school and college students</li>
+                    <li>Plan and standardize learning kits aligned with curriculum modules</li>
+                    <li>Identify students' technical requirements through interviews and feedback</li>
+                    <li>Modify curriculum based on skill gaps, interests, and student feedback</li>
+                    <li>Design course structures for different skill levels (beginner to advanced)</li>
+                    <li>Create teaching materials, presentations, and hands-on lab exercises</li>
+                    <li>Lead instructor training and ensure teaching quality standards</li>
+                    <li>Develop assessment methods and certification criteria</li>
+                    <li>Coordinate with schools/colleges for curriculum integration</li>
+                    <li>Manage day-to-day teaching operations and student engagement</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Additional Responsibilities (Edit/Add as needed):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <p style="color: #64748b; font-style: italic;">Add any additional responsibilities here...</p>
+            </div>
+        </div>
+
+        <div class="partner-section" style="background: #dcfce7; border-color: #16a34a;">
+            <h3>Partner 3: Ishinder Singh</h3>
+            <p><strong>Primary Role:</strong> Sales, Marketing & Research-Oriented Product Development</p>
+            
+            <p style="margin-top: 15px;"><strong>Pre-Filled Responsibilities (Editable):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <ul>
+                    <li>Develop and execute comprehensive marketing strategy (digital, social media, offline)</li>
+                    <li>Lead student acquisition campaigns and enrollment drives</li>
+                    <li>Manage brand development, website, and social media presence</li>
+                    <li>Create promotional content (videos, posts, brochures)</li>
+                    <li>Build partnerships with schools, colleges, and educational institutions</li>
+                    <li>Conduct market research to identify new opportunities and trends</li>
+                    <li>Lead research-oriented product development (robotics kits, drones, prototypes)</li>
+                    <li>Develop showcase projects for exhibitions and competitions</li>
+                    <li>Identify emerging technologies and investment opportunities for company growth</li>
+                    <li>Design and build innovative robots/systems for demonstrations and events</li>
+                    <li>Oversee sales operations and customer relationship management</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Additional Responsibilities (Edit/Add as needed):</strong></p>
+            <div class="editable-area" contenteditable="true">
+                <p style="color: #64748b; font-style: italic;">Add any additional responsibilities here...</p>
+            </div>
+        </div>
+
+        <h2>4. Shared Responsibilities (All Partners)</h2>
+        <div class="editable-area" contenteditable="true">
+            <ul>
+                <li>Participate in strategic planning and major decision-making</li>
+                <li>Attend regular partnership meetings (weekly/bi-weekly)</li>
+                <li>Contribute to problem-solving and conflict resolution</li>
+                <li>Maintain transparency in all business operations</li>
+                <li>Support each other's areas during critical periods</li>
+                <li>Represent the company professionally in all external interactions</li>
+            </ul>
+        </div>
+
+        <h2>5. Decision-Making Protocol</h2>
+        <div class="editable-area" contenteditable="true">
+            <p><strong>Equal Partnership Model:</strong> All major decisions require majority agreement (2 out of 3 partners).</p>
+            <p style="margin-top: 10px;"><strong>Major Decisions Include:</strong></p>
+            <ul>
+                <li>Expenditures above ₹50,000</li>
+                <li>Hiring key personnel</li>
+                <li>Entering new business lines or partnerships</li>
+                <li>Changes to equity structure or profit distribution</li>
+                <li>Opening new locations or significant expansions</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Day-to-Day Decisions:</strong> Each partner has autonomy in their respective areas as defined above.</p>
+        </div>
+
+        <h2>6. Initial Timeline and Milestones</h2>
+        <div class="editable-area" contenteditable="true">
+            <p><strong>January 2026:</strong></p>
+            <ul>
+                <li>Finalize company name and register business</li>
+                <li>Secure office/lab space and complete basic setup</li>
+                <li>Develop initial curriculum draft for 3-5 core courses</li>
+            </ul>
+
+            <p style="margin-top: 15px;"><strong>February 2026:</strong></p>
+            <ul>
+                <li>Launch marketing campaigns and social media presence</li>
+                <li>Begin student enrollment for pilot batches</li>
+                <li>Finalize learning kits and procurement of materials</li>
+            </ul>
+
+            <p style="margin-top: 15px;"><strong>March 2026:</strong></p>
+            <ul>
+                <li>Start first training batches</li>
+                <li>Develop 2-3 showcase projects for demonstrations</li>
+                <li>Establish partnerships with 3-5 educational institutions</li>
+                <li>Review and refine all operations based on initial feedback</li>
+            </ul>
+        </div>
+
+        <div class="signature-section">
+            <h2>7. Partner Signatures and Agreement</h2>
+            <p>By signing below, all partners agree to the roles, responsibilities, and equity distribution outlined in this document.</p>
+
+            <div style="margin-top: 30px;">
+                <div class="signature-box">
+                    <p><strong>Gourav Gupta</strong></p>
+                    <div class="signature-line"></div>
+                    <p style="font-size: 12px; color: #64748b;">Signature & Date</p>
+                </div>
+
+                <div class="signature-box">
+                    <p><strong>Kanwarpreet Singh</strong></p>
+                    <div class="signature-line"></div>
+                    <p style="font-size: 12px; color: #64748b;">Signature & Date</p>
+                </div>
+
+                <div class="signature-box">
+                    <p><strong>Ishinder Singh</strong></p>
+                    <div class="signature-line"></div>
+                    <p style="font-size: 12px; color: #64748b;">Signature & Date</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: #f8fafc; border-radius: 6px; text-align: center;">
+            <p style="font-size: 13px; color: #64748b;">
+                <strong>Next Steps:</strong> Each partner should review, edit their responsibilities if needed, vote for company names, and return the signed document to the group.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
